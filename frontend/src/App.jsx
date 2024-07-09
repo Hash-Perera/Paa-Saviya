@@ -1,12 +1,8 @@
-import { useState } from "react";
 import "./App.css";
+import { Grid, Typography } from "@mui/material";
 
 function App() {
-  return (
-    <>
-      <p>This is new project</p>
-    </>
-  );
+  return <>This is new project</>;
 }
 
 export default App;
