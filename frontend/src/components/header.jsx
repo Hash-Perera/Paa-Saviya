@@ -13,11 +13,20 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Logo from "../assets/images/logo-small.png";
+import { useNavigate } from "react-router-dom";
 
-const pages = ["Home", "Projects", "About", "Contact"];
+const pages = [
+  { name: "Home", link: "/" },
+  { name: "Projects", link: "/projects" },
+  { name: "Services", link: "" },
+  { name: "Education ", link: "" },
+  { name: "About", link: "/about-us" },
+  { name: "Contact", link: "/contact-us" },
+];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function AppHeader() {
+  const Navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -80,8 +89,13 @@ function AppHeader() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.name}
+                  onClick={() => {
+                    Navigate(page.link);
+                  }}
+                >
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -96,11 +110,13 @@ function AppHeader() {
           >
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.name}
+                onClick={() => {
+                  Navigate(page.link);
+                }}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
