@@ -1,6 +1,4 @@
 import "./App.css";
-import { Grid, Typography } from "@mui/material";
-import AppHeader from "./components/header";
 import Home from "./pages/home";
 import ContactUs from "./pages/contactUs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
