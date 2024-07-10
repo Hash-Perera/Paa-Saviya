@@ -1,12 +1,26 @@
 import React from "react";
-import AppHeader from "../components/header";
-import Footer from "../components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
 import { BsEye } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const AboutUs = () => {
+  const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: secondSectionRef, inView: secondSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: thirdSectionRef, inView: thirdSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -21,19 +35,14 @@ const AboutUs = () => {
 
   const item = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
+    visible: { y: 0, opacity: 1 },
   };
 
   const thirdContainerItem = {
     hidden: { x: 100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
+    visible: { x: 0, opacity: 1 },
   };
+
   const thirdContainer = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -45,18 +54,20 @@ const AboutUs = () => {
       },
     },
   };
+
   return (
     <>
       <div
         style={{ marginTop: "150px" }}
-        className="container-fluid  py-5 bg-gray "
+        className="container-fluid py-5 bg-gray"
       >
-        <div className="row justify-content-center my-4  ">
+        <div className="row justify-content-center my-4">
           <motion.div
+            ref={firstSectionRef}
             initial={{ opacity: 0, x: -300 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={firstSectionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2 }}
-            className="col p-5 "
+            className="col p-5"
           >
             <p
               style={{
@@ -64,7 +75,7 @@ const AboutUs = () => {
                 letterSpacing: "0.05em",
                 fontSize: "1.1em",
               }}
-              className="text-center text-muted  "
+              className="text-center text-muted"
             >
               Our goal is to be the leader in providing evidence-based,
               comprehensive, and patient-centered care for wound management and
@@ -76,19 +87,15 @@ const AboutUs = () => {
           </motion.div>
 
           <motion.div
+            ref={firstSectionRef}
             initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={firstSectionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2 }}
             className="col-md-7 ml-auto px-5 py-3 bg-primary text-white shadow-lg d-flex align-items-center"
           >
             <div className="ml-4">
               <h1 className="font-weight-bold mb-4">
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+                <div style={{ display: "flex", flexDirection: "column" }}>
                   <span style={{ fontSize: "1.5em" }}>Our</span>
                   <span style={{ fontSize: "2.5em" }}>Vision</span>
                 </div>
@@ -100,12 +107,14 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </div>
+
       <div className="container-fluid py-5 bg-gray my-5">
         <motion.div
           className="row justify-content-center align-items-center my-5"
           variants={container}
           initial="hidden"
-          animate="visible"
+          animate={secondSectionInView ? "visible" : "hidden"}
+          ref={secondSectionRef}
         >
           <motion.div className="col-md-3 mb-4 ml-5" variants={item}>
             <div className="card shadow-lg border-0">
@@ -150,10 +159,11 @@ const AboutUs = () => {
       </div>
 
       <div className="container-fluid py-5 bg-gray">
-        <div className="row justify-content-center my-5 ">
+        <div className="row justify-content-center my-5">
           <motion.div
+            ref={thirdSectionRef}
             initial={{ opacity: 0, x: -300 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={thirdSectionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2 }}
             className="col-md-6 ml-auto px-5 py-3 bg-primary text-white shadow-lg d-flex align-items-center justify-content-end"
           >
@@ -164,12 +174,7 @@ const AboutUs = () => {
             </div>
             <div className="ml-4">
               <h1 className="font-weight-bold mb-4">
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+                <div style={{ display: "flex", flexDirection: "column" }}>
                   <span style={{ fontSize: "1.5em" }}>Our</span>
                   <span style={{ fontSize: "2.5em" }}>Services</span>
                 </div>
@@ -178,13 +183,14 @@ const AboutUs = () => {
           </motion.div>
           <motion.div
             initial="hidden"
-            animate="visible"
+            animate={thirdSectionInView ? "visible" : "hidden"}
             variants={thirdContainer}
             className="col-md-6 p-3"
+            ref={thirdSectionRef}
           >
             <motion.div
               variants={thirdContainerItem}
-              className="card shadow-lg border-0 mb-2 "
+              className="card shadow-lg border-0 mb-2"
             >
               <div className="card-body">
                 <p className="card-title m-0">
@@ -208,7 +214,7 @@ const AboutUs = () => {
 
             <motion.div
               variants={thirdContainerItem}
-              className="card shadow-lg border-0 mb-2 "
+              className="card shadow-lg border-0 mb-2"
             >
               <div className="card-body">
                 <p className="card-title m-0">
@@ -221,7 +227,7 @@ const AboutUs = () => {
             </motion.div>
             <motion.div
               variants={thirdContainerItem}
-              className="card shadow-lg border-0 mb-2 "
+              className="card shadow-lg border-0 mb-2"
             >
               <div className="card-body">
                 <p className="card-title m-0">Diagnostic services</p>
