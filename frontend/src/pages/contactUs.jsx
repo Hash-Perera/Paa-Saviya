@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import AppHeader from "../components/header";
+import { motion } from "framer-motion";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -19,20 +20,32 @@ const ContactUs = () => {
 
   return (
     <>
-      <AppHeader />
-      <div className="container-fluid bg-white vh-100">
+      <div
+        style={{ marginTop: "100px" }}
+        className="container bg-white vh-100 "
+      >
         <div className="row mt-4">
           <div className="col text-center">
-            <h1 className="text-gradient font-weight-bold">
+            <motion.h1
+              className="text-gradient font-weight-bold"
+              initial={{ opacity: 0, y: -150 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+            >
               Get in Touch with us
-            </h1>
+            </motion.h1>
           </div>
         </div>
 
         <div className="row mt-4 px-4">
           <div className="col-md-10 mx-auto">
             <div className="row p-3 shadow-lg bg-white border">
-              <div className="col-md-6 p-5 border shadow-lg ml-auto bg-gradient-blue">
+              <motion.div
+                className="col-md-6 p-5 border shadow-lg ml-auto bg-gradient-blue"
+                initial={{ opacity: 0, x: -150 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2 }}
+              >
                 <h3 className="text-white mt-2">Contact Details</h3>
                 <div>
                   <p className="text-white mt-5">
@@ -48,8 +61,14 @@ const ContactUs = () => {
                     paa-saviya@srg.cmb.ac.lk
                   </p>
                 </div>
-              </div>
-              <div className="col py-5 px-4 bg-white border shadow-lg mr-auto">
+              </motion.div>
+
+              <motion.div
+                className="col py-5 px-4 bg-white border shadow-lg mr-auto"
+                initial={{ opacity: 0, x: 150 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2 }}
+              >
                 <h3 className="text-muted">Closer than a click away</h3>
                 <form className="form mt-5 mx-0" onSubmit={handleSubmit}>
                   <div className="mb-4">
@@ -73,16 +92,6 @@ const ContactUs = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <input
-                      type="tel"
-                      className="form-control bg-gray"
-                      id="phone"
-                      placeholder="Enter your Mobile No"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
-                  <div className="mb-4">
                     <textarea
                       className="form-control bg-gray"
                       id="message"
@@ -96,7 +105,7 @@ const ContactUs = () => {
                     Submit
                   </button>
                 </form>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
