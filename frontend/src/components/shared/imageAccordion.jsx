@@ -1,3 +1,4 @@
+import React from "react";
 import projectImage01 from "../../assets/images/step_smart/projectImage-01.jpeg";
 import projectImage02 from "../../assets/images/step_smart/projectImage-02.jpeg";
 import projectImage03 from "../../assets/images/step_smart/projectImage-03.jpeg";
@@ -20,177 +21,70 @@ import projectImage19 from "../../assets/images/step_smart/projectImage-19.jpeg"
 import projectImage20 from "../../assets/images/step_smart/projectImage-20.jpeg";
 import projectImage21 from "../../assets/images/step_smart/projectImage-21.jpeg";
 import projectImage22 from "../../assets/images/step_smart/projectImage-22.jpeg";
-import "bootstrap/dist/js/bootstrap.bundle";
 
 const ImageAccordion = () => {
+  const projectImages = [
+    { id: 1, image: projectImage01 },
+    { id: 2, image: projectImage02 },
+    { id: 3, image: projectImage03 },
+    { id: 4, image: projectImage04 },
+    { id: 5, image: projectImage05 },
+    { id: 6, image: projectImage06 },
+    { id: 7, image: projectImage07 },
+    { id: 8, image: projectImage08 },
+    { id: 9, image: projectImage09 },
+    { id: 10, image: projectImage10 },
+    { id: 11, image: projectImage11 },
+    { id: 12, image: projectImage12 },
+    { id: 13, image: projectImage13 },
+    { id: 14, image: projectImage14 },
+    { id: 15, image: projectImage15 },
+    { id: 16, image: projectImage16 },
+    { id: 17, image: projectImage17 },
+    { id: 18, image: projectImage18 },
+    { id: 19, image: projectImage19 },
+    { id: 20, image: projectImage20 },
+    { id: 21, image: projectImage21 },
+  ];
+
   return (
     <div className="accordion" id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header" id="headingOne">
           <button
-            className="accordion-button"
+            className="accordion-button custom-card text-white"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOne"
             aria-expanded="false"
             aria-controls="collapseOne"
           >
-            See More Photos
+            See Photos
           </button>
         </h2>
         <div
           id="collapseOne"
-          className="accordion-collapse collapse "
+          className="accordion-collapse collapse"
           aria-labelledby="headingOne"
           data-bs-parent="#accordionExample"
         >
           <div className="accordion-body">
-            <div className="container-fluid bg-gray ">
-              <div className="row ">
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage01}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage02}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage03}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage04}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage05}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage06}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage07}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage08}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage09}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage10}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage11}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage12}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage13}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage14}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage15}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage16}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage17}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage18}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage19}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage20}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
-                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                  <img
-                    src={projectImage21}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src={projectImage22}
-                    className="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                </div>
+            <div className="container-fluid bg-gray">
+              <div className="row">
+                {projectImages.map((image) => {
+                  return (
+                    <div
+                      key={image.id}
+                      className="col-lg-4 col-md-6 mb-4 d-flex align-items-center justify-content-center"
+                    >
+                      <img
+                        src={image.image}
+                        className="w-100 shadow-1-strong rounded"
+                        alt={`Project Image ${image.id}`}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -1,8 +1,5 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
-import { BsEye } from "react-icons/bs";
-import { FaHandsHelping } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import "../styles/aboutUsPage.css";
 
@@ -26,23 +23,6 @@ const AboutUs = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
 
   const thirdContainerItem = {
     hidden: { x: 100, opacity: 0 },
