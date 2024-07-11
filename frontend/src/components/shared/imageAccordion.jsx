@@ -20,7 +20,6 @@ import projectImage18 from "../../assets/images/step_smart/projectImage-18.jpeg"
 import projectImage19 from "../../assets/images/step_smart/projectImage-19.jpeg";
 import projectImage20 from "../../assets/images/step_smart/projectImage-20.jpeg";
 import projectImage21 from "../../assets/images/step_smart/projectImage-21.jpeg";
-import projectImage22 from "../../assets/images/step_smart/projectImage-22.jpeg";
 
 const ImageAccordion = () => {
   const projectImages = [
