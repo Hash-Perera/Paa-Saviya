@@ -1,179 +1,134 @@
-import { motion } from "framer-motion";
-import mainImage from "../assets/images/projects/mainImage.jpg";
-import ImageAccordion from "../components/shared/imageAccordion";
-import "bootstrap/dist/js/bootstrap.bundle";
-import "../styles/projectsPage.css";
-import { useInView } from "react-intersection-observer";
+import { Typography, Grid, Button, Card, CardMedia } from "@mui/material";
+import { useState } from "react";
+import SharedModal from "../components/shared/modal-popup";
+import Paper from "@mui/material/Paper";
+
+//! Images
+import edu2 from "../assets/images/home/education_2.jpg";
+import ss1 from "../assets/images/step_smart/step_smart_1.jpeg";
+import ss2 from "../assets/images/step_smart/step_smart_2.jpeg";
+import ss3 from "../assets/images/step_smart/step_smart_3.jpeg";
+import ss4 from "../assets/images/step_smart/step_smart_4.jpeg";
+import ss5 from "../assets/images/step_smart/step_smart_5.jpeg";
+import ss6 from "../assets/images/step_smart/step_smart_6.jpeg";
 
 const Projects = () => {
-  const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  //! Handle the modal popup
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-  const { ref: secondSectionRef, inView: secondSectionInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ssImageList = [
+    { id: 1, image: ss1 },
+    { id: 2, image: ss2 },
+    { id: 3, image: ss3 },
+    { id: 4, image: ss4 },
+    { id: 5, image: ss5 },
+    { id: 6, image: ss6 },
+  ];
+
   return (
     <>
-      <div
-        style={{ marginTop: "100px", minHeight: "80vh" }}
-        className="container-fluid pb-5  bg-gray pt-3 px-5"
-      >
-        <div className="row">
-          <div className="col-md-6 mx-auto text-center ">
-            <motion.h1
-              ref={firstSectionRef}
-              initial={{ opacity: 0, x: -300 }}
-              animate={firstSectionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.2 }}
-              className="gradient-text main-title font-weight-bold "
-            >
-              Our Projects
-            </motion.h1>
-          </div>
-        </div>
+      <div style={{ marginTop: "4.5rem" }}>
+        <Typography variant="h3" textAlign={"center"}>
+          Our Projects
+        </Typography>
 
-        <div className="row my-5 d-flex  align-items-center">
-          <motion.div
-            ref={firstSectionRef}
-            initial={{ opacity: 0, y: -300 }}
-            animate={firstSectionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1.2 }}
-            className="col d-flex flex-column align-items-start "
+        <Grid
+          container
+          spacing={2}
+          marginTop={"5.5rem"}
+          marginBottom={"9rem"}
+          paddingLeft={"8rem"}
+          paddingRight={"8rem"}
+        >
+          <Grid item xs={12} sm={6} md={6} lg={6}>
+            <Typography variant="h5">Step Smart</Typography>
+
+            <Typography variant="body1" marginTop={4}>
+              Our customized insoles for diabetic feet offer personalized
+              support and comfort tailored to your unique foot structure.
+              Designed to provide optimal cushioning, arch support, and shock
+              absorption, these insoles help prevent foot complications, heal
+              existing ulcers, improve comfort, and promote overall foot health
+              for those with diabetes.
+            </Typography>
+            <Typography variant="body1" marginTop={1}>
+              Date: Every 1st and 3rd Wednesday of the month
+            </Typography>
+            <Typography variant="body1" marginTop={1}>
+              Location: 13th floor of UCFM Tower, Faculty of Medicine,
+              University of Colombo, Maradana Road, Colombo 07.
+            </Typography>
+            <Button
+              variant="outlined"
+              color="primary"
+              sx={{ marginTop: 5 }}
+              onClick={handleOpen}
+            >
+              See Photos
+            </Button>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={6}
+            lg={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <div className=" card border-0 custom-card-2 px-3">
-              <div className="card-body">
-                <h1 className="my-5 font-weight-bold gradient-orange-subtitle">
-                  Step Smart
-                </h1>
-                <p
-                  style={{
-                    lineHeight: "2",
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
-                  }}
-                  className=" text-justify"
-                >
-                  <span className="font-weight-bold">
-                    Our customized insoles for diabetic feet offer personalized
-                    support and comfort tailored to your unique foot structure.
-                    Designed to provide optimal cushioning, arch support, and
-                    shock absorption, these insoles help prevent foot
-                    complications, heal existing ulcers, improve comfort, and
-                    promote overall foot health for those with diabetes.
-                  </span>
-                  <br className="text-muted" />
-                  <hr className="text-dark" />
-                  <strong>Date:</strong> Every 1st and 3rd Wednesday of the
-                  month
-                  <br />
-                  <br />
-                  <strong>Location:</strong> 13th floor of UCFM Tower, Faculty
-                  of Medicine, University of Colombo, Maradana Road, Colombo 07.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            ref={firstSectionRef}
-            initial={{ opacity: 0, y: 300 }}
-            animate={firstSectionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1.2 }}
-            className="col-md-5 "
-          >
-            <img
-              src={mainImage} // Replace with the path to your image
-              alt="Step Smart Project"
-              className="img-fluid shadow-lg "
-            />
-          </motion.div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <ImageAccordion />
-          </div>
+            <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+              <CardMedia
+                sx={{ height: 300, width: 300 }}
+                image={edu2}
+                title=""
+              />
+            </Card>
+          </Grid>
+        </Grid>
+
+        <div
+          style={{
+            marginLeft: "8rem",
+            marginRight: "8rem",
+            minHeight: "40vh",
+          }}
+        >
+          <Typography variant="h4" textAlign={"start"}>
+            Upcomming Projects
+          </Typography>
+          <Typography variant="h5" marginTop={"4rem"}>
+            - Pāda diabetic shoe project
+          </Typography>
+          <Typography variant="h5" marginTop={"1rem"}>
+            - Prosthetic limb project
+          </Typography>
         </div>
       </div>
-      <div className="container-flui my-5 border bg-gray">
-        <div className="row my-2">
-          <div className="col-md-6 mx-auto text-center">
-            <motion.h1
-              ref={secondSectionRef}
-              initial={{ opacity: 0, y: -200 }}
-              animate={secondSectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1.2 }}
-              className="gradient-text main-title font-weight-bold"
-            >
-              Upcoming Projects
-            </motion.h1>
-          </div>
-        </div>
-        <div className="row py-5">
-          <div className="mx-auto col-md-4">
-            <motion.div
-              ref={secondSectionRef}
-              initial={{ opacity: 0, x: -300 }}
-              animate={secondSectionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.2 }}
-              className="custom-card-2"
-            >
-              <div className="card-body text-center px-5 py-3">
-                <h5 className="gradient-orange-subtitle">
-                  Pada diabetic shoe project
-                </h5>
-                <p
-                  style={{
-                    lineHeight: 2,
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
-                  }}
-                  className="text-justify py-3"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum iste vel voluptatem adipisci necessitatibus, commodi
-                  dolores illo, dolore quasi iusto iure sint officia nemo dicta
-                  expedita odit rerum, accusamus alias qui repellat quam fuga.
-                  Illum aut, fugiat sunt odit deserunt illo tempore autem?
-                  Numquam odit totam deserunt nulla, reprehenderit deleniti!
-                </p>
-              </div>
-            </motion.div>
-          </div>
 
-          <div className="mx-auto col-md-4">
-            <motion.div
-              ref={secondSectionRef}
-              initial={{ opacity: 0, x: 300 }}
-              animate={secondSectionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.2 }}
-              className="custom-card-2"
-            >
-              <div className="card-body text-center px-5 py-3">
-                <h5 className="gradient-orange-subtitle">
-                  Prosthetic limb project
-                </h5>
-                <p
+      <SharedModal open={open} onClose={handleClose}>
+        <Grid container spacing={2}>
+          {ssImageList.map((image) => (
+            <Grid item xs={12} sm={12} md={4} lg={4} key={image.id}>
+              <Paper sx={{ height: "18rem" }}>
+                <img
+                  src={image.image}
+                  alt=""
                   style={{
-                    lineHeight: 2,
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
                   }}
-                  className="text-justify py-3"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum iste vel voluptatem adipisci necessitatibus, commodi
-                  dolores illo, dolore quasi iusto iure sint officia nemo dicta
-                  expedita odit rerum, accusamus alias qui repellat quam fuga.
-                  Illum aut, fugiat sunt odit deserunt illo tempore autem?
-                  Numquam odit totam deserunt nulla, reprehenderit deleniti!
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+                />
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </SharedModal>
     </>
   );
 };
