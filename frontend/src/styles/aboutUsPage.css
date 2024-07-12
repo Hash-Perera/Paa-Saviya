@@ -1,0 +1,100 @@
+.bg-image-vision {
+    background-image: url('../assets/images/projects/vision_01.jpg');
+    /* Update the path to your image */
+    background-size: contain;
+    background-position: right;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.bg-image-aims {
+    background-image: url('../assets/images/projects/vision_02.jpg');
+    /* Update the path to your image */
+    background-size: contain;
+    background-position: left;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.062);
+    /* Adjust the overlay color and opacity */
+    z-index: 1;
+}
+
+.vision-text {
+    background-image: linear-gradient(45deg, #4ca7f1, #01617e);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    
+}
+
+.vision-text .sub-title {
+    font-size: 1.5em;
+}
+
+.vision-text .main-title {
+    font-size: 2.5em;
+}
+
+.vision-paragraph{
+    background-image: linear-gradient(240deg,#1f95f7,
+        #01617e);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    
+}
+
+
+.custom-card {
+    background-image: linear-gradient(180deg, #1f95f7,
+                #01617e);
+    
+    border-radius: 15px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    /* 3D shadow effect */
+    
+}
+
+
+.custom-card .card-body {
+    color : white
+}
+
+.custom-card .card-title {
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+
+.about-us-custom-card-2 {
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.about-us-custom-card-2 .card-title {
+    font-size: 1.1em;
+ color: black;
+}
+
+.question-mark {
+    font-size: 2.3em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff7300, #ffcc00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
