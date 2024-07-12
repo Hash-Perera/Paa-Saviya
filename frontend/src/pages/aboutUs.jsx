@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "../styles/aboutUsPage.css";
 import { duration, Typography } from "@mui/material";
 import doc1Image from "../assets/images/projects/doc1Image.png";
 import doc3Image from "../assets/images/projects/doc3Image.png";
+import "../styles/aboutUsPage.css";
 
 const AboutUs = () => {
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
@@ -111,10 +111,6 @@ const AboutUs = () => {
           >
             <motion.div
               variants={firstContainerItem}
-              // ref={firstSectionRef}
-              // initial={{ opacity: 0, x: 500 }}
-              // animate={firstSectionInView ? { opacity: 1, x: 0 } : {}}
-              // transition={{ duration: 2 }}
               className="custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
@@ -124,7 +120,7 @@ const AboutUs = () => {
                     letterSpacing: "0.05em",
                     fontSize: "1.1em",
                   }}
-                  className="card-title m-0 text-center"
+                  className="m-0 text-center"
                 >
                   Paa-Saviya is an organization within the University of
                   Colombo, Faculty of Medicine, established two years ago to
@@ -137,10 +133,6 @@ const AboutUs = () => {
 
             <motion.div
               variants={firstContainerItem}
-              // ref={firstSectionRef}
-              // initial={{ opacity: 0, x: 500 }}
-              // animate={firstSectionInView ? { opacity: 1, x: 0 } : {}}
-              // transition={{ duration: 2 }}
               className="custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
@@ -150,7 +142,7 @@ const AboutUs = () => {
                     letterSpacing: "0.05em",
                     fontSize: "1.1em",
                   }}
-                  className="card-title m-0 text-center"
+                  className="m-0 text-center"
                 >
                   Paa-Saviya is committed to providing comprehensive wound care
                   and other clinical services, conducting rigorous research with
@@ -169,7 +161,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, x: -500 }}
               animate={fourthSectionInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.5 }}
-              className="custom-card-2 card border mb-5"
+              className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
                 <p
@@ -178,7 +170,7 @@ const AboutUs = () => {
                     letterSpacing: "0.05em",
                     fontSize: "1.1em",
                   }}
-                  className="card-title m-0 text-center"
+                  className=" m-0 text-center"
                 >
                   Our team comprises professionals from diverse sectors,
                   including healthcare, sciences, technology, and social
