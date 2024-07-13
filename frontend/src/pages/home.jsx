@@ -95,7 +95,7 @@ const Home = () => {
             transition={{ duration: 1.2 }}
           >
             <Typography variant="h3" color="textPrimary" textAlign="start">
-              Paa-Saviya Foundation
+              Paa-SAVIYA
             </Typography>
           </motion.div>
 

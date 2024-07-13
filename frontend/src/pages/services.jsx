@@ -17,9 +17,16 @@ const Services = () => {
           paddingRight={"8rem"}
         >
           <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h3">Wound Care Clinic</Typography>
+            <Typography variant="h3" letterSpacing={1}>
+              Wound Care Clinic
+            </Typography>
 
-            <Typography variant="body1" marginTop={4}>
+            <Typography
+              variant="body1"
+              marginTop={4}
+              letterSpacing={2}
+              lineHeight={"1.7rem"}
+            >
               Wound care and limb salvage requires a multidisciplinary,
               multispecialty approach to manage the patient at risk of / with a
               chronic wound. Our novel 5 step model of recruit, heal, maintain,
@@ -89,13 +96,17 @@ const Services = () => {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h3">Diagnostic services</Typography>
+            <Typography variant="h3" letterSpacing={1}>
+              Diagnostic services
+            </Typography>
 
-            <Typography variant="h6" marginTop={4}>
+            <Typography variant="h6" marginTop={4} letterSpacing={1}>
               • Noninvasive and invasive perfusion assessment
             </Typography>
-            <Typography variant="h6">• Infection diagnostics</Typography>
-            <Typography variant="h6">
+            <Typography variant="h6" letterSpacing={1}>
+              • Infection diagnostics
+            </Typography>
+            <Typography variant="h6" letterSpacing={1}>
               • Biomechanical assessment of the foot
             </Typography>
           </Grid>

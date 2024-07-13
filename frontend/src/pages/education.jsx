@@ -81,11 +81,16 @@ const Education = () => {
           paddingRight={"8rem"}
         >
           <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h5">
+            <Typography variant="h5" letterSpacing={2}>
               Certificate Course in Wound Care and Limb Salvage
             </Typography>
 
-            <Typography variant="body1" marginTop={4}>
+            <Typography
+              variant="body1"
+              marginTop={4}
+              letterSpacing={2}
+              lineHeight={"1.7rem"}
+            >
               With the participation of multiple healthcare professionals,
               extending from doctors to nursing officers from different
               districts of the country, the first certificate course in wound
