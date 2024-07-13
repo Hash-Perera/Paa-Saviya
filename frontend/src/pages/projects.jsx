@@ -43,9 +43,16 @@ const Projects = () => {
           paddingRight={"8rem"}
         >
           <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h5">Step Smart</Typography>
+            <Typography variant="h5" letterSpacing={1}>
+              Step Smart
+            </Typography>
 
-            <Typography variant="body1" marginTop={4}>
+            <Typography
+              variant="body1"
+              marginTop={4}
+              letterSpacing={2}
+              lineHeight={"1.7rem"}
+            >
               Our customized insoles for diabetic feet offer personalized
               support and comfort tailored to your unique foot structure.
               Designed to provide optimal cushioning, arch support, and shock
@@ -53,10 +60,15 @@ const Projects = () => {
               existing ulcers, improve comfort, and promote overall foot health
               for those with diabetes.
             </Typography>
-            <Typography variant="body1" marginTop={1}>
+            <Typography variant="body1" marginTop={2} letterSpacing={2}>
               Date: Every 1st and 3rd Wednesday of the month
             </Typography>
-            <Typography variant="body1" marginTop={1}>
+            <Typography
+              variant="body1"
+              marginTop={2}
+              letterSpacing={2}
+              lineHeight={"1.7rem"}
+            >
               Location: 13th floor of UCFM Tower, Faculty of Medicine,
               University of Colombo, Maradana Road, Colombo 07.
             </Typography>
@@ -98,13 +110,13 @@ const Projects = () => {
             minHeight: "40vh",
           }}
         >
-          <Typography variant="h4" textAlign={"start"}>
+          <Typography variant="h4" textAlign={"start"} letterSpacing={2}>
             Upcomming Projects
           </Typography>
-          <Typography variant="h5" marginTop={"4rem"}>
+          <Typography variant="h5" marginTop={"4rem"} letterSpacing={1}>
             - Pāda diabetic shoe project
           </Typography>
-          <Typography variant="h5" marginTop={"1rem"}>
+          <Typography variant="h5" marginTop={"1rem"} letterSpacing={1}>
             - Prosthetic limb project
           </Typography>
         </div>
