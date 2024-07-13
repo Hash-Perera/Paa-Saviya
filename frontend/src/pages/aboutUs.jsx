@@ -1,10 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { duration, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import doc1Image from "../assets/images/projects/doc1Image.png";
 import doc3Image from "../assets/images/projects/doc3Image.png";
 import "../styles/aboutUsPage.css";
+import visionImage from "../assets/images/projects/vision_01_resize.png";
+import aimImage from "../assets/images/projects/vision_02_resize_02.png";
 
 const AboutUs = () => {
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
@@ -111,7 +113,7 @@ const AboutUs = () => {
           >
             <motion.div
               variants={firstContainerItem}
-              className="custom-card-2 card border mb-5"
+              className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
                 <p
@@ -133,7 +135,7 @@ const AboutUs = () => {
 
             <motion.div
               variants={firstContainerItem}
-              className="custom-card-2 card border mb-5"
+              className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
                 <p
@@ -232,20 +234,30 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 300 }}
             animate={secondSectionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.5 }}
-            className="col-md-6 border ml-auto  py-3 text-white shadow d-flex align-items-center bg-image-vision"
+            className="col-md-6 border ml-auto   text-white shadow d-flex align-items-center "
           >
             <div className="bg-overlay"></div>
-            <div className="mt-5" style={{ zIndex: 2 }}>
-              <h1 className="font-weight-bold mb-4 vision-text">
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <span className="main-title" style={{ fontSize: "1.5em" }}>
-                    Our
-                  </span>
-                  <span className="sub-title" style={{ fontSize: "2.5em" }}>
-                    Vision
-                  </span>
+            <div className="row ">
+              <div className="col  p-0">
+                <div className="mt-5" style={{ zIndex: 2 }}>
+                  <h1 className="font-weight-bold mb-4 vision-text">
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <span
+                        className="main-title"
+                        style={{ fontSize: "1.5em" }}
+                      >
+                        Our
+                      </span>
+                      <span className="sub-title" style={{ fontSize: "2.5em" }}>
+                        Vision
+                      </span>
+                    </div>
+                  </h1>
                 </div>
-              </h1>
+              </div>
+              <div className="col-md-7 ">
+                <img src={visionImage} className="img-fluid" alt="" />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -259,28 +271,33 @@ const AboutUs = () => {
             ref={thirdSectionRef}
             initial={{ opacity: 0, x: -300 }}
             animate={thirdSectionInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.5 }}
-            className="col-md-6 ml-auto py-3 b text-white shadow d-flex align-items-center justify-content-end bg-image-aims"
+            transition={{ duration: 1.2 }}
+            className="col-md-6 ml-auto py-3 b text-white shadow d-flex align-items-center justify-content-end "
           >
             <div className="bg-overlay" style={{ zIndex: 2 }}></div>
 
-            <div className="ml-4">
-              <h1 className="mb-4 vision-text">
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <span
-                    className="main-title font-weight-bold"
-                    style={{ fontSize: "1.5em" }}
-                  >
-                    Our
-                  </span>
-                  <span
-                    className="sub-title font-weight-bold"
-                    style={{ fontSize: "2.5em" }}
-                  >
-                    Aims
-                  </span>
-                </div>
-              </h1>
+            <div className="row">
+              <div className="col-md-7 ">
+                <img src={aimImage} className="img-fluid" />
+              </div>
+              <div className="col d-flex flex-column align-items-center justify-content-center">
+                <h1 className="mb-4 vision-text">
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <span
+                      className="main-title font-weight-bold"
+                      style={{ fontSize: "1.5em" }}
+                    >
+                      Our
+                    </span>
+                    <span
+                      className="sub-title font-weight-bold"
+                      style={{ fontSize: "2.5em" }}
+                    >
+                      Aims
+                    </span>
+                  </div>
+                </h1>
+              </div>
             </div>
           </motion.div>
           <motion.div

@@ -1,20 +1,3 @@
-.bg-image-vision {
-    background-image: url('../assets/images/projects/vision_01.jpg');
-    /* Update the path to your image */
-    background-size: contain;
-    background-position: right;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
-.bg-image-aims {
-    background-image: url('../assets/images/projects/vision_02.jpg');
-    /* Update the path to your image */
-    background-size: contain;
-    background-position: left;
-    position: relative;
-    background-repeat: no-repeat;
-}
 
 .bg-overlay {
     position: absolute;
