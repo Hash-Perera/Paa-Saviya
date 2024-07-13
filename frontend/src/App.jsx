@@ -7,10 +7,12 @@ import Projects from "./pages/projects";
 import AboutUs from "./pages/aboutUs";
 import Education from "./pages/education";
 import Services from "./pages/services";
+import ScrollToTop from "./components/scrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />

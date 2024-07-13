@@ -9,14 +9,6 @@ import visionImage from "../assets/images/projects/vision_01_resize.png";
 import aimImage from "../assets/images/projects/vision_02_resize_02.png";
 
 const AboutUs = () => {
-  const bgImageVisionStyle = {
-    backgroundImage: `url(${visionImage})`,
-    backgroundSize: "contain",
-    backgroundPosition: "right",
-    position: "relative",
-    backgroundRepeat: "no-repeat",
-  };
-
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -33,11 +25,6 @@ const AboutUs = () => {
   });
 
   const { ref: fourthSectionRef, inView: fourthSectionInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: fifthSectionRef, inView: fifthSectionInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -284,7 +271,7 @@ const AboutUs = () => {
             ref={thirdSectionRef}
             initial={{ opacity: 0, x: -300 }}
             animate={thirdSectionInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.2 }}
             className="col-md-6 ml-auto py-3 b text-white shadow d-flex align-items-center justify-content-end "
           >
             <div className="bg-overlay" style={{ zIndex: 2 }}></div>
