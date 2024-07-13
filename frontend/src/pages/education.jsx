@@ -1,5 +1,7 @@
 import { Button, Grid, Typography, Box, Card, CardMedia } from "@mui/material";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import SharedModal from "../components/shared/modal-popup";
 import Paper from "@mui/material/Paper";
 
@@ -27,7 +29,7 @@ import projectImage20 from "../assets/images/limb_salvage/projectImage-20.jpeg";
 import projectImage21 from "../assets/images/limb_salvage/projectImage-21.jpeg";
 
 import edu1 from "../assets/images/home/education_1.jpg";
-import edu2 from "../assets/images/home/education_2.jpg";
+import edu2 from "../assets/images/projects/EducationMain.jpg";
 import edu3 from "../assets/images/home/education_3.jpg";
 
 const Education = () => {
@@ -65,106 +67,129 @@ const Education = () => {
     { id: 2, title: "Research & Development", image: edu3 },
   ];
 
+  const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: secondSectionRef, inView: secondSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <>
       <div style={{ marginTop: "4.5rem" }}>
-        <Typography variant="h2" textAlign={"center"}>
-          Capacity Building
-        </Typography>
-
-        <Grid
-          container
-          spacing={2}
-          marginTop={"5.5rem"}
-          marginBottom={"5.5rem"}
-          paddingLeft={"8rem"}
-          paddingRight={"8rem"}
+        <motion.div
+          ref={firstSectionRef}
+          initial={{ opacity: 0 }}
+          animate={firstSectionInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.7 }}
         >
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h5" letterSpacing={2}>
-              Certificate Course in Wound Care and Limb Salvage
-            </Typography>
-
-            <Typography
-              variant="body1"
-              marginTop={4}
-              letterSpacing={2}
-              lineHeight={"1.7rem"}
-            >
-              With the participation of multiple healthcare professionals,
-              extending from doctors to nursing officers from different
-              districts of the country, the first certificate course in wound
-              care and limb salvage was held on the January 2024. This marked
-              the pivotal first step in disseminating wound care knowledge to
-              hospital settings with limited resources across borders.
-            </Typography>
-            <Button
-              variant="outlined"
-              color="primary"
-              sx={{ marginTop: 5 }}
-              onClick={handleOpen}
-            >
-              See Photos
-            </Button>
-          </Grid>
+          <Typography variant="h2" textAlign={"center"}>
+            Capacity Building
+          </Typography>
           <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            container
+            spacing={2}
+            marginTop={"5.5rem"}
+            marginBottom={"5.5rem"}
+            paddingLeft={"8rem"}
+            paddingRight={"8rem"}
           >
-            <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
-              <CardMedia
-                sx={{ height: 300, width: 300 }}
-                image={edu2}
-                title=""
-              />
-            </Card>
-          </Grid>
-        </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={6}>
+              <Typography variant="h5" letterSpacing={2}>
+                Certificate Course in Wound Care and Limb Salvage
+              </Typography>
 
-        <Grid
-          container
-          spacing={2}
-          marginTop={"5rem"}
-          paddingTop={"3rem"}
-          paddingBottom={"5rem"}
-          className="bg-light"
-        >
-          {otherImages.map((image) => (
+              <Typography
+                variant="body1"
+                marginTop={4}
+                letterSpacing={2}
+                lineHeight={"1.7rem"}
+              >
+                With the participation of multiple healthcare professionals,
+                extending from doctors to nursing officers from different
+                districts of the country, the first certificate course in wound
+                care and limb salvage was held on the January 2024. This marked
+                the pivotal first step in disseminating wound care knowledge to
+                hospital settings with limited resources across borders.
+              </Typography>
+              <Button
+                variant="outlined"
+                color="primary"
+                sx={{ marginTop: 5 }}
+                onClick={handleOpen}
+              >
+                See Photos
+              </Button>
+            </Grid>
             <Grid
-              container
               item
               xs={12}
-              sm={12}
+              sm={6}
               md={6}
               lg={6}
-              key={image.id}
-              alignItems="center"
-              justifyContent="center"
-              style={{ minHeight: "100%" }}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              <div style={{ textAlign: "center" }}>
-                <Typography variant="h4" marginBottom={"3rem"}>
-                  {image.title}
-                </Typography>
-                <Card sx={{ width: "20rem", height: "20rem" }}>
-                  <CardMedia
-                    sx={{ width: "20rem", height: "20rem" }}
-                    image={image.image}
-                    title=""
-                  />
-                </Card>
-              </div>
+              <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+                <CardMedia
+                  sx={{ height: 300, width: 300 }}
+                  image={edu2}
+                  title=""
+                />
+              </Card>
             </Grid>
-          ))}
-        </Grid>
+          </Grid>
+        </motion.div>
+
+        <motion.div
+          ref={secondSectionRef}
+          initial={{ opacity: 0 }}
+          animate={secondSectionInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.7 }}
+        >
+          <Grid
+            container
+            spacing={2}
+            marginTop={"5rem"}
+            paddingTop={"3rem"}
+            paddingBottom={"5rem"}
+            className="bg-light"
+          >
+            {otherImages.map((image) => (
+              <Grid
+                container
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                key={image.id}
+                alignItems="center"
+                justifyContent="center"
+                style={{ minHeight: "100%" }}
+              >
+                <div style={{ textAlign: "center" }}>
+                  <Typography variant="h4" marginBottom={"3rem"}>
+                    {image.title}
+                  </Typography>
+                  <Card sx={{ width: "20rem", height: "20rem" }}>
+                    <CardMedia
+                      sx={{ width: "20rem", height: "20rem" }}
+                      image={image.image}
+                      title=""
+                    />
+                  </Card>
+                </div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
 
         <SharedModal open={open} onClose={handleClose}>
           <Grid container spacing={2}>
