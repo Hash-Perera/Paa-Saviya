@@ -22,6 +22,16 @@ import PrasadKatulanda from "../assets/images/founders/Prof_Vidya_Jyothi_Profess
 import NalinDeSilva from "../assets/images/founders/Prof_Nalin_De_Silva.png";
 
 const AboutUs = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.5,
+      },
+    }),
+  };
   const founderList = [
     {
       name: "Vidya Jyothi Professor Vajira H. W Dissanayake",
@@ -89,6 +99,11 @@ const AboutUs = () => {
   });
 
   const { ref: fourthSectionRef, inView: fourthSectionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: fifthSectionRef, inView: fifthSectionInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -409,21 +424,29 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div>
-        <Typography variant="h2" color="textPrimary" align="center">
-          Founders
-        </Typography>
+      <motion.div ref={fifthSectionRef}>
+        <motion.div
+          ref={fifthSectionRef}
+          initial={{ opacity: 0, y: -200 }}
+          animate={fifthSectionInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1.2 }}
+        >
+          <Typography variant="h2" color="textPrimary" align="center">
+            Founders
+          </Typography>
+        </motion.div>
 
         <Grid
           container
           spacing={2}
-          marginTop={"5rem"}
+          marginTop={"2rem"}
           marginBottom={"10rem"}
           paddingLeft={"2rem"}
           paddingRight={"2rem"}
         >
           {founderList.map((founder, index) => (
             <Grid
+              key={index}
               item
               xs={5}
               sm={4}
@@ -431,33 +454,41 @@ const AboutUs = () => {
               lg={3}
               className="d-flex align-items-center justify-content-center"
             >
-              <CommonCard className="d-flex flex-column align-items-center founder-cards">
-                <Avatar
-                  alt="Remy Sharp"
-                  src={founder.image}
-                  sx={{ width: "8rem", height: "8rem", marginTop: "1rem" }}
-                />
-                <div className="mt-4" style={{ width: "90%" }}>
-                  <Typography
-                    variant="h7"
-                    color="textPrimary"
-                    style={{ fontWeight: "bold" }}
-                  >
-                    {founder.name}
-                  </Typography>
-                  <Typography
-                    varient="h7"
-                    color="textSecondary"
-                    marginTop={"0.5rem"}
-                  >
-                    {founder.description}
-                  </Typography>
-                </div>
-              </CommonCard>
+              <motion.div
+                ref={fifthSectionRef}
+                custom={index}
+                initial="hidden"
+                animate={fifthSectionInView ? "visible" : "hidden"}
+                variants={cardVariants}
+              >
+                <CommonCard className="d-flex flex-column align-items-center founder-cards">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={founder.image}
+                    sx={{ width: "8rem", height: "8rem", marginTop: "1rem" }}
+                  />
+                  <div className="mt-4" style={{ width: "90%" }}>
+                    <Typography
+                      variant="h7"
+                      color="textPrimary"
+                      style={{ fontWeight: "bold" }}
+                    >
+                      {founder.name}
+                    </Typography>
+                    <Typography
+                      varient="h7"
+                      color="textSecondary"
+                      marginTop={"0.5rem"}
+                    >
+                      {founder.description}
+                    </Typography>
+                  </div>
+                </CommonCard>
+              </motion.div>
             </Grid>
           ))}
         </Grid>
-      </div>
+      </motion.div>
     </>
   );
 };

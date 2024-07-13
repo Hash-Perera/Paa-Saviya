@@ -121,7 +121,7 @@ const ContactUs = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <button type="submit" className="btn bg-blue text-white">
+              <button type="submit" className="btn btn-primary text-white">
                 Submit
               </button>
             </form>
