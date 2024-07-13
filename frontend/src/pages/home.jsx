@@ -6,7 +6,7 @@ import CardComponent1 from "../components/card-1";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-//Images
+//!Images
 import edu1 from "../assets/images/home/education_1.jpg";
 import edu2 from "../assets/images/home/education_2.jpg";
 import edu3 from "../assets/images/home/education_3.jpg";
@@ -95,7 +95,7 @@ const Home = () => {
             transition={{ duration: 1.2 }}
           >
             <Typography variant="h3" color="textPrimary" textAlign="start">
-              Paa-Saviya Foundation
+              Paa-SAVIYA
             </Typography>
           </motion.div>
 
