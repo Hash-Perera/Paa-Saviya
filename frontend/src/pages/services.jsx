@@ -16,7 +16,7 @@ const Services = () => {
           paddingLeft={"8rem"}
           paddingRight={"8rem"}
         >
-          <Grid item xs={12} sm={6} md={6} lg={6}>
+          <Grid item xs={12} sm={7} md={7} lg={7}>
             <Typography variant="h3" letterSpacing={1}>
               Wound Care Clinic
             </Typography>
@@ -26,6 +26,7 @@ const Services = () => {
               marginTop={4}
               letterSpacing={2}
               lineHeight={"1.7rem"}
+              textAlign={"justify"}
             >
               Wound care and limb salvage requires a multidisciplinary,
               multispecialty approach to manage the patient at risk of / with a
@@ -49,9 +50,9 @@ const Services = () => {
           <Grid
             item
             xs={12}
-            sm={6}
-            md={6}
-            lg={6}
+            sm={5}
+            md={5}
+            lg={5}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -100,13 +101,18 @@ const Services = () => {
               Diagnostic services
             </Typography>
 
-            <Typography variant="h6" marginTop={4} letterSpacing={1}>
+            <Typography
+              variant="h6"
+              marginTop={4}
+              letterSpacing={1}
+              lineHeight={"2.5rem"}
+            >
               • Noninvasive and invasive perfusion assessment
             </Typography>
-            <Typography variant="h6" letterSpacing={1}>
+            <Typography variant="h6" letterSpacing={2} lineHeight={"2.5rem"}>
               • Infection diagnostics
             </Typography>
-            <Typography variant="h6" letterSpacing={1}>
+            <Typography variant="h6" letterSpacing={2} lineHeight={"2.5rem"}>
               • Biomechanical assessment of the foot
             </Typography>
           </Grid>

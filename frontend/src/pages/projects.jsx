@@ -50,6 +50,7 @@ const Projects = () => {
             <Typography
               variant="body1"
               marginTop={4}
+              textAlign={"justify"}
               letterSpacing={2}
               lineHeight={"1.7rem"}
             >
