@@ -115,7 +115,7 @@ function AppHeader() {
                   my: 2,
                   color: "black",
                   display: "block",
-                  ":hover": { color: "red" },
+                  ":hover": { color: "#1f95f7" },
                   fontWeight: selectedLink === page.name ? "bold" : "normal",
                 }}
               >
