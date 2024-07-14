@@ -27,16 +27,19 @@ const Home = () => {
       url: proj1,
       description:
         "Personalized diabetic insoles: optimal support, comfort, and foot health.",
+      navigationUrl: "/projects",
     },
     {
       id: 2,
       title: "Pāda Diabetic Shoe Project",
       url: proj2,
+      navigationUrl: "/projects#upcommingProjectSection",
     },
     {
       id: 3,
       title: "Prosthetic Limb Project",
       url: proj3,
+      navigationUrl: "/projects#upcommingProjectSection",
     },
   ];
 
@@ -46,18 +49,21 @@ const Home = () => {
       name: "Capacity Building",
       url: edu2,
       color: "#dbecf6",
+      navigationUrl: "/education",
     },
     {
       id: 2,
       name: "Health Education",
       url: edu1,
       color: "#65d2d9",
+      navigationUrl: "/education#otherEducationSection",
     },
     {
       id: 3,
       name: "Research and Development",
       url: edu3,
       color: "#e3e9ff",
+      navigationUrl: "/education#otherEducationSection",
     },
   ];
 
@@ -116,7 +122,7 @@ const Home = () => {
               className="mt-4"
               sx={{ fontStyle: "italic" }}
             >
-              Limb salvage and innovations alliance of University of Colombo
+              Limb Salvage and Innovations Alliance of University of Colombo
             </Typography>
           </motion.div>
         </Box>
@@ -137,10 +143,11 @@ const Home = () => {
           <Box className="d-flex flex-column align-items-center" sx={{ p: 14 }}>
             <Typography variant="h5" color="white" textAlign="center">
               Wounds are an unavoidable part of our human journey, and healing
-              is the lifeline that ensures our survival. In the tapestry of
-              life, the body's remarkable ability to mend itself often goes
-              unnoticed, a silent marvel we rarely appreciate until it's
-              challenged.
+              is the lifeline that ensures our survival. Yet, in a few where
+              this bewitching process is altered, complex wounds demand the
+              delicate art of limb salvage and the tender touch of expert
+              healing. Through this resolute care, the quality of life will
+              exquisitely be restored, and the promise of renewal embraced.
             </Typography>
 
             <Typography
@@ -218,7 +225,7 @@ const Home = () => {
             <Typography variant="body1" color="textSecondary" align="center">
               We aim to conduct educational and clinical training for
               undergraduate, postgraduate students and healthcare professionals
-              as well as to offer comprehensive research training and engage in
+              as well as offer comprehensive research training and engage in
               collaborative research with members, institutes, and international
               universities.
             </Typography>
@@ -286,7 +293,7 @@ const Home = () => {
                         className="mt-5"
                         color="primary"
                         onClick={() => {
-                          Navigate("/education");
+                          Navigate(edu.navigationUrl);
                         }}
                       >
                         Explore

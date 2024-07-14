@@ -168,7 +168,7 @@ const AboutUs = () => {
                 variant="h2"
                 color="textPrimary"
               >
-                What is Paa-Saviya <span className="question-mark ml-3">?</span>
+                What is Paa-SAVIYA <span className="question-mark ml-3">?</span>
               </Typography>
             </motion.div>
           </div>
@@ -203,7 +203,7 @@ const AboutUs = () => {
                   }}
                   className="m-0 text-center"
                 >
-                  Paa-Saviya is an organization within the University of
+                  Paa-SAVIYA is an organization within the University of
                   Colombo, Faculty of Medicine, established two years ago to
                   address the significant yet neglected area of wound care in
                   Sri Lanka. Wound care is an unquantified and poorly studied
@@ -225,7 +225,7 @@ const AboutUs = () => {
                   }}
                   className="m-0 text-center"
                 >
-                  Paa-Saviya is committed to providing comprehensive wound care
+                  Paa-SAVIYA is committed to providing comprehensive wound care
                   and other clinical services, conducting rigorous research with
                   the collaboration of other prestigious universities,
                   developing innovative wound care products, engaging in
@@ -258,7 +258,7 @@ const AboutUs = () => {
                   services, all united by a common goal: to offer the best
                   possible care for patients with complex diseases and
                   conditions. As a proud extension of the Faculty of Medicine,
-                  Paa-Saviya strives to make a meaningful impact on wound care
+                  Paa-SAVIYA strives to make a meaningful impact on wound care
                   and patient outcomes.
                 </p>
               </div>
@@ -518,7 +518,7 @@ export default AboutUs;
                     services, all united by a common goal: to offer the best
                     possible care for patients with complex diseases and
                     conditions. As a proud extension of the Faculty of Medicine,
-                    Paa-Saviya strives to make a meaningful impact on wound care
+                    Paa-SAVIYA strives to make a meaningful impact on wound care
                     and patient outcomes.
                   </p>
                 </div>
