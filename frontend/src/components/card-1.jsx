@@ -1,8 +1,11 @@
 import React from "react";
 import "../styles/card-1.css";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const CardComponent1 = ({ images }) => {
+  const Navigate = useNavigate();
+
   return (
     <div className="wrapper">
       {images.map((image, index) => (
@@ -10,11 +13,18 @@ const CardComponent1 = ({ images }) => {
           <img src={image.url} alt={image.alt} />
           <div className="info">
             <h1>{image.title}</h1>
-            <p>
-              Lorem Ipsum is simply dummy text from the printing and typeseting
-              industry
-            </p>
-            <Button variant="outlined" color="primary">
+            <p>{image.description}</p>
+            <Button
+              variant="outlined"
+              color="primary"
+              sx={{
+                color: "white",
+                borderColor: "white",
+              }}
+              onClick={() => {
+                Navigate("/projects");
+              }}
+            >
               Read More
             </Button>
           </div>

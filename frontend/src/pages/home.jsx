@@ -5,6 +5,7 @@ import "../styles/home.css";
 import CardComponent1 from "../components/card-1";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 //!Images
 import edu1 from "../assets/images/home/education_1.jpg";
@@ -17,11 +18,15 @@ import proj2 from "../assets/images/home/projects_2.jpg";
 import proj3 from "../assets/images/home/projects_3.jpg";
 
 const Home = () => {
+  const Navigate = useNavigate();
+
   const projects = [
     {
       id: 1,
       title: "Step Smart",
       url: proj1,
+      description:
+        "Personalized diabetic insoles: optimal support, comfort, and foot health.",
     },
     {
       id: 2,
@@ -94,7 +99,7 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
           >
-            <Typography variant="h3" color="textPrimary" textAlign="start">
+            <Typography variant="h2" color="textPrimary" textAlign="start">
               Paa-SAVIYA
             </Typography>
           </motion.div>
@@ -109,11 +114,9 @@ const Home = () => {
               color="textPrimary"
               textAlign="start"
               className="mt-4"
+              sx={{ fontStyle: "italic" }}
             >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              <br /> Deleniti ducimus cumque natus esse itaque voluptatum sequi
-              porro quos,
-              <br /> consectetur atque.
+              Limb salvage and innovations alliance of University of Colombo
             </Typography>
           </motion.div>
         </Box>
@@ -121,7 +124,6 @@ const Home = () => {
 
       <div
         style={{
-          height: "60vh",
           background:
             "linear-gradient(to bottom right, #103a6d, #1e5799, #2989d8, #7db9e8)",
         }}
@@ -182,75 +184,6 @@ const Home = () => {
               making a difference in the healthcare landscape.
             </Typography>
           </Grid>
-
-          {/* {projects.map((project, index) => (
-            <Grid
-              key={index}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              className="d-flex align-items-center justify-content-center mt-3"
-            >
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <CommonCard
-                      style={{
-                        position: "relative",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                      className="d-flex flex-column align-items-center justify-content-center"
-                    >
-                      <img
-                        style={{
-                          height: "100%",
-                          width: "100%",
-                          objectFit: "cover",
-                        }}
-                        src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A6A0477DA809F962FBA9A54E53C40E66F6182B822AC8CF0AD1BCDFB8D8CBEC6A/scale?width=1200&aspectRatio=1.78&format=webp"
-                      />
-                    </CommonCard>
-                  </div>
-                  <div class="flip-card-back">
-                    <CommonCard
-                      style={{
-                        position: "relative",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                      className="d-flex flex-column align-items-center justify-content-center"
-                    >
-                      <Typography
-                        variant="h6"
-                        color="textPrimary"
-                        style={{
-                          position: "absolute",
-                          top: "30%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          // backgroundColor: "rgba(0, 0, 0, 0.5)",
-                          color: "black",
-                          padding: "5px 10px",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        {project.name}
-                      </Typography>
-                      <Button
-                        variant="outlined"
-                        className="mt-5"
-                        color="primary"
-                      >
-                        Explore
-                      </Button>
-                    </CommonCard>
-                  </div>
-                </div>
-              </div>
-            </Grid>
-          ))} */}
         </Grid>
 
         <CardComponent1 images={projects} />
@@ -283,8 +216,11 @@ const Home = () => {
               Education
             </Typography>
             <Typography variant="body1" color="textSecondary" align="center">
-              Explore our ongoing and completed projects to see how we are
-              making a difference in the healthcare landscape.
+              We aim to conduct educational and clinical training for
+              undergraduate, postgraduate students and healthcare professionals
+              as well as to offer comprehensive research training and engage in
+              collaborative research with members, institutes, and international
+              universities.
             </Typography>
           </Grid>
 
@@ -349,6 +285,9 @@ const Home = () => {
                         variant="outlined"
                         className="mt-5"
                         color="primary"
+                        onClick={() => {
+                          Navigate("/education");
+                        }}
                       >
                         Explore
                       </Button>
@@ -454,6 +393,9 @@ const Home = () => {
                         variant="outlined"
                         className="mt-5"
                         color="primary"
+                        onClick={() => {
+                          Navigate("/services");
+                        }}
                       >
                         Explore
                       </Button>
