@@ -57,7 +57,7 @@ const Footer = () => {
             lineHeight={"1.7rem"}
             letterSpacing={2}
           >
-            Contact : 01125588794
+            Contact :
           </Typography>
           <Typography
             variant="body2"
