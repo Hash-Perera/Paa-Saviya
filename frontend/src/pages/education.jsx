@@ -1,9 +1,10 @@
 import { Button, Grid, Typography, Box, Card, CardMedia } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SharedModal from "../components/shared/modal-popup";
 import Paper from "@mui/material/Paper";
+import { useLocation } from "react-router-dom";
 
 //! Images
 import projectImage01 from "../assets/images/limb_salvage/projectImage-01.jpeg";
@@ -37,6 +38,15 @@ const Education = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const imageSet = [
     { id: 1, image: projectImage01 },
@@ -111,8 +121,8 @@ const Education = () => {
                 With the participation of multiple healthcare professionals,
                 extending from doctors to nursing officers from different
                 districts of the country, the first certificate course in wound
-                care and limb salvage was held on the January 2024. This marked
-                the pivotal first step in disseminating wound care knowledge to
+                care and limb salvage was held on January 2024. This marked the
+                pivotal first step in disseminating wound care knowledge to
                 hospital settings with limited resources across borders.
               </Typography>
               <Button
@@ -147,6 +157,7 @@ const Education = () => {
           </Grid>
         </motion.div>
 
+        <div id="otherEducationSection"></div>
         <motion.div
           ref={secondSectionRef}
           initial={{ opacity: 0 }}

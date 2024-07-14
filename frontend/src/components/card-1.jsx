@@ -22,7 +22,7 @@ const CardComponent1 = ({ images }) => {
                 borderColor: "white",
               }}
               onClick={() => {
-                Navigate("/projects");
+                Navigate(image.navigationUrl);
               }}
             >
               Read More

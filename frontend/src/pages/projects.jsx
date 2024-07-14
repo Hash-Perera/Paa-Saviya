@@ -1,9 +1,10 @@
 import { Typography, Grid, Button, Card, CardMedia } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SharedModal from "../components/shared/modal-popup";
 import Paper from "@mui/material/Paper";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 
 //! Images
 import edu2 from "../assets/images/projects/projectsMain.jpg";
@@ -19,6 +20,15 @@ const Projects = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const ssImageList = [
     { id: 1, image: ss1 },
@@ -122,6 +132,7 @@ const Projects = () => {
           </Grid>
         </motion.div>
 
+        <div id="upcommingProjectSection"></div>
         <motion.div
           ref={secondSectionRef}
           initial={{ opacity: 0 }}
