@@ -78,9 +78,9 @@ const Services = () => {
                 alignItems: "center",
               }}
             >
-              <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+              <Card sx={{ maxWidth: "26rem", maxHeight: "26rem" }}>
                 <CardMedia
-                  sx={{ height: 300, width: 300 }}
+                  sx={{ height: "26rem", width: "26rem" }}
                   image={serviceImage1}
                   title=""
                 />
@@ -115,9 +115,9 @@ const Services = () => {
                 alignItems: "center",
               }}
             >
-              <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+              <Card sx={{ maxWidth: "26rem", maxHeight: "26rem" }}>
                 <CardMedia
-                  sx={{ height: 300, width: 300 }}
+                  sx={{ height: "26rem", width: "26rem" }}
                   image={serviceImage2}
                   title=""
                 />

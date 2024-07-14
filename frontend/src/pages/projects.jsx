@@ -59,7 +59,7 @@ const Projects = () => {
             paddingLeft={"8rem"}
             paddingRight={"8rem"}
           >
-            <Grid item xs={12} sm={6} md={6} lg={6}>
+            <Grid item xs={12} sm={12} md={12} lg={6}>
               <Typography variant="h5" letterSpacing={1}>
                 Step Smart
               </Typography>
@@ -76,7 +76,7 @@ const Projects = () => {
                 Designed to provide optimal cushioning, arch support, and shock
                 absorption, these insoles help prevent foot complications, heal
                 existing ulcers, improve comfort, and promote overall foot
-                health for those with diabetes.
+                health for those with diabetes
               </Typography>
               <Typography variant="body1" marginTop={2} letterSpacing={2}>
                 Date: Every 1st and 3rd Wednesday of the month
@@ -102,8 +102,8 @@ const Projects = () => {
             <Grid
               item
               xs={12}
-              sm={6}
-              md={6}
+              sm={12}
+              md={12}
               lg={6}
               sx={{
                 display: "flex",
@@ -111,9 +111,9 @@ const Projects = () => {
                 alignItems: "center",
               }}
             >
-              <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+              <Card sx={{ maxWidth: "28rem", maxHeight: "28rem" }}>
                 <CardMedia
-                  sx={{ height: 300, width: 300 }}
+                  sx={{ height: "28rem", width: "28rem" }}
                   image={edu2}
                   title=""
                 />
