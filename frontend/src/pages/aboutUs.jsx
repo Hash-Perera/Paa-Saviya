@@ -432,7 +432,7 @@ const AboutUs = () => {
           transition={{ duration: 1.2 }}
         >
           <Typography variant="h2" color="textPrimary" align="center">
-            Founders
+            Our Team
           </Typography>
         </motion.div>
 

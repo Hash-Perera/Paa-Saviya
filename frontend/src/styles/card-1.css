@@ -73,19 +73,8 @@
   margin-top: 8px;
 }
 
-/* .info button {
-  padding: 0.6rem;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  background: white;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s ease;
-}*/
-
 .info button:hover {
-  background: #103a6d;
-  color: white;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
