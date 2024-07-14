@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../assets/images/logo-small.png";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const pages = [
   { name: "Home", link: "/" },
@@ -22,23 +23,14 @@ const pages = [
 ];
 
 function AppHeader() {
-  const Navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const [selectedLink, setSelectedLink] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -85,14 +77,26 @@ function AppHeader() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
+                <NavLink
                   key={page.name}
-                  onClick={() => {
-                    Navigate(page.link);
-                  }}
+                  to={page.link}
+                  style={{ textDecoration: "none", color: "black" }}
+                  activeClassName="active"
+                  className="nav-link mx-2"
                 >
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
+                  {({ isActive }) => (
+                    <Typography
+                      sx={{
+                        my: 2,
+                        color: isActive ? "#1f95f7" : "black",
+                        fontWeight: isActive ? "bold" : "normal",
+                        display: "block",
+                      }}
+                    >
+                      {page.name}
+                    </Typography>
+                  )}
+                </NavLink>
               ))}
             </Menu>
           </Box>
@@ -105,22 +109,27 @@ function AppHeader() {
             }}
           >
             {pages.map((page) => (
-              <Button
+              <NavLink
                 key={page.name}
-                onClick={() => {
-                  Navigate(page.link);
-                  setSelectedLink(page.name);
-                }}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  ":hover": { color: "#1f95f7" },
-                  fontWeight: selectedLink === page.name ? "bold" : "normal",
-                }}
+                to={page.link}
+                style={{ textDecoration: "none", color: "black" }}
+                activeClassName="active"
+                className="nav-link mx-2"
               >
-                {page.name}
-              </Button>
+                {({ isActive }) => (
+                  <Typography
+                    sx={{
+                      my: 2,
+                      color: isActive ? "#1f95f7" : "black",
+                      fontWeight: isActive ? "bold" : "normal",
+                      display: "block",
+                      ":hover": { color: "#1f95f7" },
+                    }}
+                  >
+                    {page.name}
+                  </Typography>
+                )}
+              </NavLink>
             ))}
           </Box>
         </Toolbar>
