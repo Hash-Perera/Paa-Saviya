@@ -13,8 +13,8 @@ import { motion } from "framer-motion";
 import SharedModal from "../components/shared/modal-popup";
 
 //! Images
-import serviceImage1 from "../assets/images/projects/services1.jpg";
-import serviceImage2 from "../assets/images/projects/services2.jpg";
+import serviceImage1 from "../assets/images/services/Icon- Wound Care Clinic.png";
+import serviceImage2 from "../assets/images/services/Icon- Diagnistic services.webp";
 import woundCareImage1 from "../assets/images/wound_care_clinic/1.png";
 import woundCareImage2 from "../assets/images/wound_care_clinic/2.png";
 import woundCareImage3 from "../assets/images/wound_care_clinic/3.png";

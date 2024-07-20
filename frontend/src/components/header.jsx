@@ -20,7 +20,7 @@ const pages = [
   { name: "Education ", link: "/education" },
   { name: "About", link: "/about-us" },
   { name: "Contact", link: "/contact-us" },
-  { name: "Join Us", link: "/join-us" },
+  // { name: "Join Us", link: "/join-us" },
 ];
 
 function AppHeader() {
@@ -132,6 +132,26 @@ function AppHeader() {
                 )}
               </NavLink>
             ))}
+            <NavLink
+              to={"/join-us"}
+              style={{ textDecoration: "none", color: "black" }}
+              activeclassname="active"
+              className="nav-link mx-2"
+            >
+              {({ isActive }) => (
+                <Typography
+                  sx={{
+                    my: 2,
+                    color: isActive ? "red" : "red",
+                    fontWeight: isActive ? "bold" : "normal",
+                    display: "block",
+                    ":hover": { color: "#1f95f7" },
+                  }}
+                >
+                  Join Us
+                </Typography>
+              )}
+            </NavLink>
           </Box>
         </Toolbar>
       </Container>

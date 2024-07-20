@@ -11,17 +11,22 @@ import Fab from "@mui/material/Fab";
 import { useEffect, useState } from "react";
 
 //!Images
-import edu1 from "../assets/images/home/education_1.jpg";
-import edu2 from "../assets/images/home/education_2.jpg";
-import edu3 from "../assets/images/home/education_3.jpg";
+// import edu1 from "../assets/images/home/education_1.jpg";
+// import edu2 from "../assets/images/home/education_2.jpg";
+// import edu3 from "../assets/images/home/education_3.jpg";
 import ser1 from "../assets/images/home/services_1.avif";
-import ser2 from "../assets/images/home/services_2.jpg";
+// import ser2 from "../assets/images/home/services_2.jpg";
 import proj1 from "../assets/images/home/projects_1.avif";
 import proj2 from "../assets/images/home/projects_2.jpg";
 import proj3 from "../assets/images/home/projects_3.jpg";
 import partner1 from "../assets/images/partners/NIROGI.png";
 import partner2 from "../assets/images/partners/SLMA.png";
 import partner3 from "../assets/images/partners/SLSVS.png";
+import IconCapacityBuilding from "../assets/images/home/Icon- Capacity Building.png";
+import IconPostheticLimb from "../assets/images/home/Icon- prosthetic_limb.jpg";
+import IconResearchAndDevelopment from "../assets/images/home/Icon- Research_Dev.jpg";
+import IconHealthEducation from "../assets/images/home/Icon- Health Education.jpg";
+import IconDiagnoServices from "../assets/images/home/Icon- Diagno services.webp";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -38,14 +43,14 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Pāda Diabetic Shoe Project",
+      title: "Diabetic Shoe Project",
       url: proj2,
       navigationUrl: "/projects#upcommingProjectSection",
     },
     {
       id: 3,
       title: "Prosthetic Limb Project",
-      url: proj3,
+      url: IconPostheticLimb,
       navigationUrl: "/projects#upcommingProjectSection",
     },
   ];
@@ -54,21 +59,21 @@ const Home = () => {
     {
       id: 1,
       name: "Capacity Building",
-      url: edu2,
+      url: IconCapacityBuilding,
       color: "#dbecf6",
       navigationUrl: "/education",
     },
     {
       id: 2,
       name: "Health Education",
-      url: edu1,
+      url: IconHealthEducation,
       color: "#65d2d9",
       navigationUrl: "/education#otherEducationSection",
     },
     {
       id: 3,
       name: "Research and Development",
-      url: edu3,
+      url: IconResearchAndDevelopment,
       color: "#e3e9ff",
       navigationUrl: "/education#otherEducationSection",
     },
@@ -76,7 +81,12 @@ const Home = () => {
 
   const services = [
     { id: 1, name: "Wound Care Clinic", url: ser1, color: "#dbecf6" },
-    { id: 2, name: "Diagnostic Services", url: ser2, color: "#9ce5f0" },
+    {
+      id: 2,
+      name: "Diagnostic Services",
+      url: IconDiagnoServices,
+      color: "#9ce5f0",
+    },
   ];
 
   const partners = [
@@ -353,16 +363,22 @@ const Home = () => {
                         position: "relative",
                         width: "100%",
                         height: "100%",
+                        overflow: "hidden",
+                        borderRadius: "10px",
                       }}
                       className="d-flex flex-column align-items-center justify-content-center"
                     >
                       <img
                         style={{
-                          height: "100%",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
                           width: "100%",
+                          height: "100%",
                           objectFit: "cover",
                         }}
                         src={edu.url}
+                        alt="Education Image"
                       />
                     </CommonCard>
                   </div>
@@ -373,6 +389,7 @@ const Home = () => {
                         width: "100%",
                         height: "100%",
                         backgroundColor: edu.color,
+                        borderRadius: "10px",
                       }}
                       className="d-flex flex-column align-items-center justify-content-center"
                     >

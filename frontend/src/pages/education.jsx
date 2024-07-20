@@ -44,6 +44,9 @@ import edu3 from "../assets/images/home/education_3.jpg";
 import diabeticFootConference1 from "../assets/images/diabetic-foot-conferebce/1.png";
 import diabeticFootConference2 from "../assets/images/diabetic-foot-conferebce/2.png";
 import diabeticFootConference3 from "../assets/images/diabetic-foot-conferebce/3.png";
+import IconLimbSalvage from "../assets/images/education/Icon- Certificate Course in Wound Care and Limb Salvage.png";
+import IconHealthEducation from "../assets/images/education/Icon- Health Education.jpg";
+import IconResearchDevelopment from "../assets/images/education/Icon- Research_Dev.jpg";
 
 const Education = () => {
   //! Handle the modal popup
@@ -95,14 +98,14 @@ const Education = () => {
     {
       id: 1,
       title: "Health Education",
-      image: edu1,
+      image: IconHealthEducation,
       description:
         "We spread knowledge about foot care, footwear, diabetes, and ischemic foot through a range of channels, including articles, books, mass media, videos, and guidelines. By utilizing these diverse formats, we aim to educate and raise awareness among healthcare professionals and the public on best practices and advancements in foot health.",
     },
     {
       id: 2,
       title: "Research & Development",
-      image: edu3,
+      image: IconResearchDevelopment,
       description:
         "We intend to conduct extensive research and development in the fields of diabetic footwear, insoles, prosthetics, and orthotics to create innovative solutions tailored to the unique needs of our patients. By collaborating with experts in the fields of medicine, technology, engineering, and the sciences, we aim to leverage cutting-edge technology and interdisciplinary knowledge for our new developments that not only meet the highest standards of quality but also enhance the overall well-being of individuals with diabetes.",
     },
@@ -190,7 +193,7 @@ const Education = () => {
               <Card sx={{ maxWidth: "26rem", maxHeight: "26rem" }}>
                 <CardMedia
                   sx={{ height: "26rem", width: "26rem" }}
-                  image={edu2}
+                  image={IconLimbSalvage}
                   title=""
                 />
               </Card>

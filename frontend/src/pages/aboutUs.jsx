@@ -9,8 +9,10 @@ import Avatar from "@mui/material/Avatar";
 //! Images
 import doc1Image from "../assets/images/projects/doc1Image.png";
 import doc3Image from "../assets/images/projects/doc3Image.png";
-import visionImage from "../assets/images/projects/vision_01_resize.png";
-import aimImage from "../assets/images/projects/vision_02_resize_02.png";
+// import visionImage from "../assets/images/projects/vision_01_resize.png";
+// import aimImage from "../assets/images/projects/vision_02_resize_02.png";
+import IconAimImage from "../assets/images/aboutus/Icon- Our aims.jpg";
+import IconOurVision from "../assets/images/aboutus/Icon- Our Vision.jpg";
 
 import HWDissanayake from "../assets/images/founders/Vidya_Jyothi_Professor_Vajira_H_W_Dissanayake.png";
 import MandikaWijeyaratne from "../assets/images/founders/Prof_Mandika_Wijeyaratne.png";
@@ -334,7 +336,7 @@ const AboutUs = () => {
                 </div>
               </div>
               <div className="col-md-7 ">
-                <img src={visionImage} className="img-fluid" alt="" />
+                <img src={IconOurVision} className="img-fluid" alt="" />
               </div>
             </div>
           </motion.div>
@@ -356,7 +358,7 @@ const AboutUs = () => {
 
             <div className="row">
               <div className="col-md-7 ">
-                <img src={aimImage} className="img-fluid" />
+                <img src={IconAimImage} className="img-fluid" />
               </div>
               <div className="col d-flex flex-column align-items-center justify-content-center">
                 <h1 className="mb-4 vision-text">
