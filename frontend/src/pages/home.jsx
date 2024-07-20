@@ -6,6 +6,9 @@ import CardComponent1 from "../components/card-1";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fab from "@mui/material/Fab";
+import { useEffect, useState } from "react";
 
 //!Images
 import edu1 from "../assets/images/home/education_1.jpg";
@@ -22,6 +25,7 @@ import partner3 from "../assets/images/partners/SLSVS.png";
 
 const Home = () => {
   const Navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
 
   const projects = [
     {
@@ -95,6 +99,26 @@ const Home = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        // Adjust the scroll position as needed
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -495,6 +519,21 @@ const Home = () => {
           ))}
         </Grid>
       </motion.div>
+
+      {/* <div className="floating-new-button">
+        <Box sx={{ "& > :not(style)": { m: 1 } }}>
+          <Fab color="primary" aria-label="add">
+            <AddIcon />
+          </Fab>
+        </Box>
+      </div> */}
+      <div className={`scroll-top-button ${visible ? "visible" : "hidden"}`}>
+        <Box sx={{ "& > :not(style)": { m: 1 } }}>
+          <Fab color="primary" aria-label="add" onClick={handleScrollToTop}>
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </Box>
+      </div>
     </>
   );
 };

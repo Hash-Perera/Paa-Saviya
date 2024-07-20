@@ -120,5 +120,28 @@
   transform: rotateY(180deg);
 }
 
-/* #103a6d */
-/* #03426b */
+.floating-new-button {
+  position: fixed;
+  top: 5rem;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Scroll to top button */
+.scroll-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-top-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
