@@ -8,6 +8,7 @@ import AboutUs from "./pages/aboutUs";
 import Education from "./pages/education";
 import Services from "./pages/services";
 import ScrollToTop from "./components/scrollToTop";
+import JoinUs from "./pages/join-us";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/education" element={<Education />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/join-us" element={<JoinUs />} />
         </Route>
       </Routes>
     </BrowserRouter>

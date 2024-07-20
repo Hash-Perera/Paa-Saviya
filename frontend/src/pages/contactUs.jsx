@@ -55,7 +55,7 @@ const ContactUs = () => {
               transition={{ duration: 1.2 }}
             >
               <Typography variant="h2" color="textPrimary">
-                Get in Touch with us
+                Talk to us
               </Typography>
             </motion.div>
           </div>
@@ -82,7 +82,7 @@ const ContactUs = () => {
               </div>
               <div className="col">
                 <p className="text-dark">
-                  <FaPhoneAlt className="mr-2" /> (your contact number)
+                  <FaPhoneAlt className="mr-2" /> +94 11 720 7255
                 </p>
                 <p className="text-dark mt-4">
                   <FaEnvelope className="mr-2" />

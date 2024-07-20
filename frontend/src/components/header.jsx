@@ -20,6 +20,7 @@ const pages = [
   { name: "Education ", link: "/education" },
   { name: "About", link: "/about-us" },
   { name: "Contact", link: "/contact-us" },
+  { name: "Join Us", link: "/join-us" },
 ];
 
 function AppHeader() {

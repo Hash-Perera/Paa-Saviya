@@ -34,9 +34,8 @@ const AboutUs = () => {
   };
   const founderList = [
     {
-      name: "Vidya Jyothi Professor Vajira H. W Dissanayake",
-      description:
-        "Chair & Senior Professor of Anatomy, Department of Anatomy, Geneteics & Biomedical Informatics, Faculty of Medicine, University of Colombo",
+      name: "Vidya Jyothi Professor Vajira H. W. Dissanayake",
+      description: "Dean, Faculty of Medicine, University of Colombo",
       image: HWDissanayake,
     },
     {
@@ -448,8 +447,8 @@ const AboutUs = () => {
             <Grid
               key={index}
               item
-              xs={5}
-              sm={4}
+              xs={12}
+              sm={12}
               md={3}
               lg={3}
               className="d-flex align-items-center justify-content-center"
@@ -465,7 +464,14 @@ const AboutUs = () => {
                   <Avatar
                     alt="Remy Sharp"
                     src={founder.image}
-                    sx={{ width: "8rem", height: "8rem", marginTop: "1rem" }}
+                    sx={{
+                      width: "8rem",
+                      height: "8rem",
+                      marginTop: "1rem",
+                      "& img": {
+                        objectPosition: "top",
+                      },
+                    }}
                   />
                   <div className="mt-4" style={{ width: "90%" }}>
                     <Typography

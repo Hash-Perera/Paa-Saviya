@@ -16,6 +16,9 @@ import ser2 from "../assets/images/home/services_2.jpg";
 import proj1 from "../assets/images/home/projects_1.avif";
 import proj2 from "../assets/images/home/projects_2.jpg";
 import proj3 from "../assets/images/home/projects_3.jpg";
+import partner1 from "../assets/images/partners/NIROGI.png";
+import partner2 from "../assets/images/partners/SLMA.png";
+import partner3 from "../assets/images/partners/SLSVS.png";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -72,7 +75,11 @@ const Home = () => {
     { id: 2, name: "Diagnostic Services", url: ser2, color: "#9ce5f0" },
   ];
 
-  // const aboutUs = ["Our Vision", "Our Founders", "Our Services"];
+  const partners = [
+    { id: 1, url: partner1 },
+    { id: 2, url: partner2 },
+    { id: 3, url: partner3 },
+  ];
 
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
     triggerOnce: true,
@@ -144,10 +151,9 @@ const Home = () => {
             <Typography variant="h5" color="white" textAlign="center">
               Wounds are an unavoidable part of our human journey, and healing
               is the lifeline that ensures our survival. Yet, in a few where
-              this bewitching process is altered, complex wounds demand the
+              this fascinating process is altered, complex wounds demand the
               delicate art of limb salvage and the tender touch of expert
-              healing. Through this resolute care, the quality of life will
-              exquisitely be restored, and the promise of renewal embraced.
+              healing.
             </Typography>
 
             <Typography
@@ -157,12 +163,87 @@ const Home = () => {
               className="mt-4"
             >
               Join us in our journey to transform wound care. Together, we can
-              advance knowledge, improve outcomes, and provide the highest
-              quality of care to those in need.
+              advance knowledge, save limbs and improve their quality of life.
             </Typography>
           </Box>
         </motion.div>
       </div>
+
+      {/* Partners section */}
+      <div
+        style={{
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          className="d-flex flex-column align-items-center mb-5"
+        >
+          <Typography variant="h2" color="textPrimary">
+            Our Partners
+          </Typography>
+        </Grid>
+
+        <Grid container spacing={2} justifyContent={"space-evenly"}>
+          {partners.map((partner, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={partner.id}
+              className="d-flex justify-content-center"
+            >
+              <CommonCard
+                index={index}
+                style={{
+                  position: "relative",
+                  width: "13rem",
+                  height: "13rem",
+                }}
+                className="d-flex flex-column align-items-center justify-content-center"
+              >
+                <img
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                  src={partner.url}
+                  alt={`Partner ${index + 1}`}
+                />
+              </CommonCard>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
+      {/* <div
+        style={{
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          className="d-flex flex-column align-items-center mb-5"
+        >
+          <Typography variant="h2" color="textPrimary">
+            Latest updates
+          </Typography>
+        </Grid>
+      </div> */}
 
       {/* Projects section */}
       <div
