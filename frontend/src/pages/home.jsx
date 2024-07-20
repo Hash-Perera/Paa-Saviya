@@ -6,19 +6,31 @@ import CardComponent1 from "../components/card-1";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fab from "@mui/material/Fab";
+import { useEffect, useState } from "react";
 
 //!Images
-import edu1 from "../assets/images/home/education_1.jpg";
-import edu2 from "../assets/images/home/education_2.jpg";
-import edu3 from "../assets/images/home/education_3.jpg";
+// import edu1 from "../assets/images/home/education_1.jpg";
+// import edu2 from "../assets/images/home/education_2.jpg";
+// import edu3 from "../assets/images/home/education_3.jpg";
 import ser1 from "../assets/images/home/services_1.avif";
-import ser2 from "../assets/images/home/services_2.jpg";
+// import ser2 from "../assets/images/home/services_2.jpg";
 import proj1 from "../assets/images/home/projects_1.avif";
 import proj2 from "../assets/images/home/projects_2.jpg";
 import proj3 from "../assets/images/home/projects_3.jpg";
+import partner1 from "../assets/images/partners/NIROGI.png";
+import partner2 from "../assets/images/partners/SLMA.png";
+import partner3 from "../assets/images/partners/SLSVS.png";
+import IconCapacityBuilding from "../assets/images/home/Icon- Capacity Building.png";
+import IconPostheticLimb from "../assets/images/home/Icon- prosthetic_limb.jpg";
+import IconResearchAndDevelopment from "../assets/images/home/Icon- Research_Dev.jpg";
+import IconHealthEducation from "../assets/images/home/Icon- Health Education.jpg";
+import IconDiagnoServices from "../assets/images/home/Icon- Diagno services.webp";
 
 const Home = () => {
   const Navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
 
   const projects = [
     {
@@ -31,14 +43,14 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Pāda Diabetic Shoe Project",
+      title: "Diabetic Shoe Project",
       url: proj2,
       navigationUrl: "/projects#upcommingProjectSection",
     },
     {
       id: 3,
       title: "Prosthetic Limb Project",
-      url: proj3,
+      url: IconPostheticLimb,
       navigationUrl: "/projects#upcommingProjectSection",
     },
   ];
@@ -47,21 +59,21 @@ const Home = () => {
     {
       id: 1,
       name: "Capacity Building",
-      url: edu2,
+      url: IconCapacityBuilding,
       color: "#dbecf6",
       navigationUrl: "/education",
     },
     {
       id: 2,
       name: "Health Education",
-      url: edu1,
+      url: IconHealthEducation,
       color: "#65d2d9",
       navigationUrl: "/education#otherEducationSection",
     },
     {
       id: 3,
       name: "Research and Development",
-      url: edu3,
+      url: IconResearchAndDevelopment,
       color: "#e3e9ff",
       navigationUrl: "/education#otherEducationSection",
     },
@@ -69,10 +81,19 @@ const Home = () => {
 
   const services = [
     { id: 1, name: "Wound Care Clinic", url: ser1, color: "#dbecf6" },
-    { id: 2, name: "Diagnostic Services", url: ser2, color: "#9ce5f0" },
+    {
+      id: 2,
+      name: "Diagnostic Services",
+      url: IconDiagnoServices,
+      color: "#9ce5f0",
+    },
   ];
 
-  // const aboutUs = ["Our Vision", "Our Founders", "Our Services"];
+  const partners = [
+    { id: 1, url: partner1 },
+    { id: 2, url: partner2 },
+    { id: 3, url: partner3 },
+  ];
 
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
     triggerOnce: true,
@@ -88,6 +109,26 @@ const Home = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        // Adjust the scroll position as needed
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -144,10 +185,9 @@ const Home = () => {
             <Typography variant="h5" color="white" textAlign="center">
               Wounds are an unavoidable part of our human journey, and healing
               is the lifeline that ensures our survival. Yet, in a few where
-              this bewitching process is altered, complex wounds demand the
+              this fascinating process is altered, complex wounds demand the
               delicate art of limb salvage and the tender touch of expert
-              healing. Through this resolute care, the quality of life will
-              exquisitely be restored, and the promise of renewal embraced.
+              healing.
             </Typography>
 
             <Typography
@@ -157,12 +197,87 @@ const Home = () => {
               className="mt-4"
             >
               Join us in our journey to transform wound care. Together, we can
-              advance knowledge, improve outcomes, and provide the highest
-              quality of care to those in need.
+              advance knowledge, save limbs and improve their quality of life.
             </Typography>
           </Box>
         </motion.div>
       </div>
+
+      {/* Partners section */}
+      <div
+        style={{
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          className="d-flex flex-column align-items-center mb-5"
+        >
+          <Typography variant="h2" color="textPrimary">
+            Our Partners
+          </Typography>
+        </Grid>
+
+        <Grid container spacing={2} justifyContent={"space-evenly"}>
+          {partners.map((partner, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={partner.id}
+              className="d-flex justify-content-center"
+            >
+              <CommonCard
+                index={index}
+                style={{
+                  position: "relative",
+                  width: "13rem",
+                  height: "13rem",
+                }}
+                className="d-flex flex-column align-items-center justify-content-center"
+              >
+                <img
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                  src={partner.url}
+                  alt={`Partner ${index + 1}`}
+                />
+              </CommonCard>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
+      {/* <div
+        style={{
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          className="d-flex flex-column align-items-center mb-5"
+        >
+          <Typography variant="h2" color="textPrimary">
+            Latest updates
+          </Typography>
+        </Grid>
+      </div> */}
 
       {/* Projects section */}
       <div
@@ -240,34 +355,41 @@ const Home = () => {
               md={4}
               className="d-flex align-items-center justify-content-center mt-3"
             >
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
                     <CommonCard
                       style={{
                         position: "relative",
                         width: "100%",
                         height: "100%",
+                        overflow: "hidden",
+                        borderRadius: "10px",
                       }}
                       className="d-flex flex-column align-items-center justify-content-center"
                     >
                       <img
                         style={{
-                          height: "100%",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
                           width: "100%",
+                          height: "100%",
                           objectFit: "cover",
                         }}
                         src={edu.url}
+                        alt="Education Image"
                       />
                     </CommonCard>
                   </div>
-                  <div class="flip-card-back">
+                  <div className="flip-card-back">
                     <CommonCard
                       style={{
                         position: "relative",
                         width: "100%",
                         height: "100%",
                         backgroundColor: edu.color,
+                        borderRadius: "10px",
                       }}
                       className="d-flex flex-column align-items-center justify-content-center"
                     >
@@ -348,9 +470,9 @@ const Home = () => {
               md={6}
               className="d-flex align-items-center justify-content-center mt-3"
             >
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
                     <CommonCard
                       style={{
                         position: "relative",
@@ -369,7 +491,7 @@ const Home = () => {
                       />
                     </CommonCard>
                   </div>
-                  <div class="flip-card-back">
+                  <div className="flip-card-back">
                     <CommonCard
                       style={{
                         position: "relative",
@@ -414,6 +536,21 @@ const Home = () => {
           ))}
         </Grid>
       </motion.div>
+
+      {/* <div className="floating-new-button">
+        <Box sx={{ "& > :not(style)": { m: 1 } }}>
+          <Fab color="primary" aria-label="add">
+            <AddIcon />
+          </Fab>
+        </Box>
+      </div> */}
+      <div className={`scroll-top-button ${visible ? "visible" : "hidden"}`}>
+        <Box sx={{ "& > :not(style)": { m: 1 } }}>
+          <Fab color="primary" aria-label="add" onClick={handleScrollToTop}>
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </Box>
+      </div>
     </>
   );
 };

@@ -1,4 +1,12 @@
-import { Typography, Grid, Button, Card, CardMedia } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  Button,
+  Card,
+  CardMedia,
+  CardActionArea,
+  CardContent,
+} from "@mui/material";
 import { useState, useEffect } from "react";
 import SharedModal from "../components/shared/modal-popup";
 import Paper from "@mui/material/Paper";
@@ -14,6 +22,9 @@ import ss3 from "../assets/images/step_smart/step_smart_3.jpeg";
 import ss4 from "../assets/images/step_smart/step_smart_4.jpeg";
 import ss5 from "../assets/images/step_smart/step_smart_5.jpeg";
 import ss6 from "../assets/images/step_smart/step_smart_6.jpeg";
+
+import upp1 from "../assets/images/projects/prosthetic_limb.jpg";
+// import upp2 from "../assets/images/projects/diabetic_shoe.jpg"
 
 const Projects = () => {
   //! Handle the modal popup
@@ -37,6 +48,23 @@ const Projects = () => {
     { id: 4, image: ss4 },
     { id: 5, image: ss5 },
     { id: 6, image: ss6 },
+  ];
+
+  const upcomingProjects = [
+    {
+      id: 1,
+      name: "Diabetic shoe project",
+      url: "",
+      description:
+        "In partnership with D. Samson Industries (DSI) and the NIROGI project (of the Sri Lanka Medical Association) our pioneers from the University of Colombo have designed, developed and marketed a customized, diabetic foot-specific ‘BETA’ shoe that will provide much required foot protection for diabetics. To meet the needs of the local market, we are committed to making diabetic footwear available to every patient with distinct foot structures. In line with our dedication to innovation and improvement, we are currently in the process of customizing and refining our diabetic footwear to better serve our patients",
+    },
+    {
+      id: 2,
+      name: "Prosthetic limb project",
+      url: upp1,
+      description:
+        "Major Lower Limb Amputation resulting from vascular disease or diabetes carry a staggering 1-year mortality rate of 40-50%, with frequent re-admissions due to stump related issues. Irrespective of available data, patients with amputations often confront multiple, adverse social and psychological hardships. At our centre, we are dedicated to addressing these multifaceted issues by pioneering the development of personalized prosthetics tailored to each patients’ unique needs. We aim to not only restore mobility but also foster a sense of belonging within the society, strengthen self -esteem and quality of life. Through customized prosthetic solutions, we intend to empower individuals, enabling them to overcome physical limitations and reclaim their place in the community.",
+    },
   ];
 
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
@@ -139,20 +167,40 @@ const Projects = () => {
           animate={secondSectionInView ? { opacity: 1 } : {}}
           transition={{ duration: 2 }}
           style={{
-            marginLeft: "8rem",
-            marginRight: "8rem",
+            marginLeft: "12rem",
+            marginRight: "12rem",
             minHeight: "40vh",
+            marginBottom: "5rem",
           }}
         >
           <Typography variant="h4" textAlign={"start"} letterSpacing={2}>
-            Upcomming Projects
+            Upcoming Projects
           </Typography>
-          <Typography variant="h5" marginTop={"4rem"} letterSpacing={1}>
-            - Pāda diabetic shoe project
-          </Typography>
-          <Typography variant="h5" marginTop={"1rem"} letterSpacing={1}>
-            - Prosthetic limb project
-          </Typography>
+
+          <Grid container spacing={2} marginTop={"4rem"}>
+            {upcomingProjects.map((project) => (
+              <Grid item xs={6} md={6} lg={6} key={project.id}>
+                <Card>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="200rem"
+                      image={project.url || edu2}
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {project.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </motion.div>
       </div>
 
