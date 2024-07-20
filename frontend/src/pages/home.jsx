@@ -345,9 +345,9 @@ const Home = () => {
               md={4}
               className="d-flex align-items-center justify-content-center mt-3"
             >
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
                     <CommonCard
                       style={{
                         position: "relative",
@@ -366,7 +366,7 @@ const Home = () => {
                       />
                     </CommonCard>
                   </div>
-                  <div class="flip-card-back">
+                  <div className="flip-card-back">
                     <CommonCard
                       style={{
                         position: "relative",
@@ -453,9 +453,9 @@ const Home = () => {
               md={6}
               className="d-flex align-items-center justify-content-center mt-3"
             >
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
                     <CommonCard
                       style={{
                         position: "relative",
@@ -474,7 +474,7 @@ const Home = () => {
                       />
                     </CommonCard>
                   </div>
-                  <div class="flip-card-back">
+                  <div className="flip-card-back">
                     <CommonCard
                       style={{
                         position: "relative",

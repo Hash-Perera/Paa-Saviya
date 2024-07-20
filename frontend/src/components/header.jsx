@@ -82,7 +82,7 @@ function AppHeader() {
                   key={page.name}
                   to={page.link}
                   style={{ textDecoration: "none", color: "black" }}
-                  activeClassName="active"
+                  activeclassname="active"
                   className="nav-link mx-2"
                 >
                   {({ isActive }) => (
@@ -114,7 +114,7 @@ function AppHeader() {
                 key={page.name}
                 to={page.link}
                 style={{ textDecoration: "none", color: "black" }}
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-link mx-2"
               >
                 {({ isActive }) => (
