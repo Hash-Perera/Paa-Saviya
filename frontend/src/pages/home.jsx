@@ -100,10 +100,6 @@ const Home = () => {
     threshold: 0.1,
   });
 
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -119,6 +115,10 @@ const Home = () => {
     // Cleanup event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
