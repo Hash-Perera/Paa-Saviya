@@ -57,7 +57,7 @@ const Footer = () => {
             lineHeight={"1.7rem"}
             letterSpacing={2}
           >
-            Contact :
+            Contact : +94 11 720 7255
           </Typography>
           <Typography
             variant="body2"
