@@ -159,7 +159,7 @@ const Education = () => {
               <Typography
                 variant="body1"
                 marginTop={4}
-                letterSpacing={2}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
               >
                 With the participation of multiple healthcare professionals,
@@ -220,7 +220,7 @@ const Education = () => {
               <Typography
                 variant="body1"
                 marginTop={4}
-                letterSpacing={2}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
               >
                 Colombo Diabetic Foot Conference (CDFC) 2022 organized by
@@ -239,18 +239,18 @@ const Education = () => {
                 lineHeight={"1.7rem"}
                 style={{ fontWeight: 600 }}
               >
-                --- Outcomes of the Colombo Diabetic Foot Conference (CDFC)
+                Outcomes of the Colombo Diabetic Foot Conference (CDFC)
               </Typography>
-              <Typography variant="body2" marginTop={3} letterSpacing={2}>
+              <Typography variant="body1" marginTop={3} letterSpacing={2}>
                 • Provided knowledge and skill training sessions for the
                 management of diabetic foot ulceration for health care
                 practitioners involved in the care of the diabetic foot.
               </Typography>
-              <Typography variant="body2" marginTop={1} letterSpacing={2}>
+              <Typography variant="body1" marginTop={1} letterSpacing={2}>
                 • Improved awareness on new concepts in diabetic foot risk
                 stratification and the management of foot ulceration.
               </Typography>
-              <Typography variant="body2" marginTop={1} letterSpacing={2}>
+              <Typography variant="body1" marginTop={1} letterSpacing={2}>
                 • Initiation of establishment of a multidisciplinary diabetic
                 foot ulcer service with joint input from endocrinologists,
                 vascular surgeons, and other allied health professionals
@@ -259,17 +259,17 @@ const Education = () => {
               {/*Feedback*/}
               <Typography
                 variant="body1"
-                marginTop={"5rem"}
-                letterSpacing={2}
+                marginTop={"4rem"}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
                 style={{ fontWeight: 600 }}
               >
-                --- Feedback
+                Feedback
               </Typography>
               <Typography
                 variant="body2"
                 marginTop={5}
-                letterSpacing={2}
+                letterSpacing={1}
                 style={{ fontStyle: "italic" }}
               >
                 “All of you did your parts very well and collectively made a
