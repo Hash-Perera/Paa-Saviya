@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Grid, Typography, Box } from "@mui/material";
 import CommonCard from "../components/shared/common-card";
 import "../styles/home.css";
@@ -8,6 +9,13 @@ import { useNavigate } from "react-router-dom";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fab from "@mui/material/Fab";
 import { useEffect, useState } from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 //!Images
 import backgroundImage from "../assets/images/hero-foot-print.png";
@@ -206,7 +214,6 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Partners section */}
       <div
         style={{
           paddingLeft: "8%",
@@ -215,72 +222,128 @@ const Home = () => {
           paddingBottom: "5rem",
         }}
       >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          className="d-flex flex-column align-items-center mb-5"
-        >
-          <Typography variant="h2" color="textPrimary">
-            Our Partners
-          </Typography>
-        </Grid>
-
-        <Grid container spacing={2} justifyContent={"space-evenly"}>
-          {partners.map((partner, index) => (
+        <Grid container spacing={1}>
+          <Grid
+            container
+            xs={12}
+            sm={6}
+            md={4}
+            lg={4}
+            spacing={2}
+            justifyContent={"space-evenly"}
+            marginRight={"1rem"}
+          >
             <Grid
               item
               xs={12}
-              sm={6}
-              md={4}
-              key={partner.id}
-              className="d-flex justify-content-center"
+              sm={12}
+              md={12}
+              className="d-flex flex-column align-items-center mb-5"
             >
-              <CommonCard
-                index={index}
-                style={{
-                  position: "relative",
-                  width: "13rem",
-                  height: "13rem",
-                }}
-                className="d-flex flex-column align-items-center justify-content-center"
-              >
-                <img
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover",
-                  }}
-                  src={partner.url}
-                  alt={`Partner ${index + 1}`}
-                />
-              </CommonCard>
+              <Typography variant="h4" color="textPrimary">
+                Our Partners
+              </Typography>
             </Grid>
-          ))}
+
+            {partners.map((partner, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={partner.id}
+                className="d-flex justify-content-center"
+              >
+                <CommonCard
+                  index={index}
+                  style={{
+                    position: "relative",
+                    width: "6rem",
+                    height: "6rem",
+                  }}
+                  className="d-flex flex-column align-items-center justify-content-center"
+                >
+                  <img
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={partner.url}
+                    alt={`Partner ${index + 1}`}
+                  />
+                </CommonCard>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid
+            xs={12}
+            sm={6}
+            md={8}
+            lg={8}
+            sx={{
+              boxShadow: 1,
+              padding: "1rem",
+            }}
+          >
+            <Typography
+              variant="h6"
+              color="#1f95f7"
+              style={{ fontWeight: 700 }}
+            >
+              Highlights
+            </Typography>
+            <List
+              sx={{
+                width: "100%",
+                maxWidth: "100%",
+                bgcolor: "background.paper",
+              }}
+            >
+              <ListItem alignItems="flex-start">
+                <ListItemAvatar>
+                  <CalendarMonthIcon />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <React.Fragment>
+                      <Typography
+                        variant="body1"
+                        letterSpacing={1}
+                        color="black"
+                        component="span"
+                      >
+                        Steps Against Diabetes: Walking the Pekoe Trail with
+                        Seeni Colombo
+                      </Typography>
+                    </React.Fragment>
+                  }
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        component="span"
+                      >
+                        22nd July -16th August, 2024
+                      </Typography>
+                      <br />
+                      Paa-Saviya will join hands with Seeni Colombo for “Steps
+                      Against Diabetes: Walking the Pekoe Trail,” a
+                      300-kilometer journey supporting diabetic foot care and
+                      treatment. Donations from this project will be directed to
+                      Paa-Saviya to enhance our efforts in providing crucial
+                      care and support.
+                    </React.Fragment>
+                  }
+                />
+              </ListItem>
+              {/* <Divider variant="inset" component="li" /> */}
+            </List>
+          </Grid>
         </Grid>
       </div>
-
-      {/* <div
-        style={{
-          paddingLeft: "8%",
-          paddingRight: "8%",
-          paddingTop: "5rem",
-          paddingBottom: "5rem",
-        }}
-      >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          className="d-flex flex-column align-items-center mb-5"
-        >
-          <Typography variant="h2" color="textPrimary">
-            Latest updates
-          </Typography>
-        </Grid>
-      </div> */}
 
       {/* Projects section */}
       <div
