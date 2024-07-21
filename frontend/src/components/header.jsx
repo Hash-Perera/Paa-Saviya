@@ -36,7 +36,7 @@ function AppHeader() {
 
   return (
     <AppBar
-      position="fixed"
+      position="static"
       sx={{ backgroundColor: "white", boxShadow: "none" }}
     >
       <Container maxWidth="xl">

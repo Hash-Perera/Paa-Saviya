@@ -146,10 +146,7 @@ const AboutUs = () => {
   return (
     <>
       {/* What is Paada Saviya section */}
-      <div
-        style={{ marginTop: "100px" }}
-        className="container-fluid bg-gray pb-5 "
-      >
+      <div className="container-fluid bg-gray pb-5 ">
         <div className="row mb-4">
           <div className="col text-center">
             <motion.div

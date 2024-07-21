@@ -47,6 +47,7 @@ import diabeticFootConference3 from "../assets/images/diabetic-foot-conferebce/3
 import IconLimbSalvage from "../assets/images/education/Icon- Certificate Course in Wound Care and Limb Salvage.png";
 import IconHealthEducation from "../assets/images/education/Icon- Health Education.jpg";
 import IconResearchDevelopment from "../assets/images/education/Icon- Research_Dev.jpg";
+import IconConfernece from "../assets/images/education/Icon- Confernece.png";
 
 const Education = () => {
   //! Handle the modal popup
@@ -128,7 +129,7 @@ const Education = () => {
 
   return (
     <>
-      <div style={{ marginTop: "4.5rem" }}>
+      <div>
         <motion.div
           ref={firstSectionRef}
           initial={{ opacity: 0 }}
@@ -341,7 +342,7 @@ const Education = () => {
               >
                 <CardMedia
                   sx={{ height: "20rem", width: "26rem" }}
-                  image={edu2}
+                  image={IconConfernece}
                   title=""
                 />
                 <CardActions>
@@ -385,7 +386,12 @@ const Education = () => {
                       image={project.image || edu2}
                       alt="green iguana"
                     />
-                    <CardContent>
+                    <CardContent
+                      sx={{
+                        height: "15rem",
+                        overflow: "auto",
+                      }}
+                    >
                       <Typography gutterBottom variant="h5" component="div">
                         {project.title}
                       </Typography>

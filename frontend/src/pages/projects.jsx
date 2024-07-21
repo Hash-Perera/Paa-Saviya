@@ -24,6 +24,8 @@ import ss5 from "../assets/images/step_smart/step_smart_5.jpeg";
 import ss6 from "../assets/images/step_smart/step_smart_6.jpeg";
 
 import upp1 from "../assets/images/projects/prosthetic_limb.jpg";
+import IconStepSmart from "../assets/images/projects/Icon- Step Smart.png";
+import IconDiabeticShoe from "../assets/images/projects/Icon- Diabetic Shoe.png";
 // import upp2 from "../assets/images/projects/diabetic_shoe.jpg"
 
 const Projects = () => {
@@ -54,7 +56,7 @@ const Projects = () => {
     {
       id: 1,
       name: "Diabetic shoe project",
-      url: "",
+      url: IconDiabeticShoe,
       description:
         "In partnership with D. Samson Industries (DSI) and the NIROGI project (of the Sri Lanka Medical Association) our pioneers from the University of Colombo have designed, developed and marketed a customized, diabetic foot-specific ‘BETA’ shoe that will provide much required foot protection for diabetics. To meet the needs of the local market, we are committed to making diabetic footwear available to every patient with distinct foot structures. In line with our dedication to innovation and improvement, we are currently in the process of customizing and refining our diabetic footwear to better serve our patients",
     },
@@ -79,7 +81,7 @@ const Projects = () => {
 
   return (
     <>
-      <div style={{ marginTop: "4.5rem" }}>
+      <div>
         <motion.div
           ref={firstSectionRef}
           initial={{ opacity: 0 }}
@@ -152,7 +154,7 @@ const Projects = () => {
               <Card sx={{ maxWidth: "28rem", maxHeight: "28rem" }}>
                 <CardMedia
                   sx={{ height: "28rem", width: "28rem" }}
-                  image={edu2}
+                  image={IconStepSmart}
                   title=""
                 />
               </Card>
@@ -184,11 +186,16 @@ const Projects = () => {
                   <CardActionArea>
                     <CardMedia
                       component="img"
-                      height="200rem"
-                      image={project.url || edu2}
-                      alt="green iguana"
+                      height="200"
+                      image={project.url}
+                      alt="project image"
                     />
-                    <CardContent>
+                    <CardContent
+                      sx={{
+                        height: "18rem",
+                        overflow: "auto",
+                      }}
+                    >
                       <Typography gutterBottom variant="h5" component="div">
                         {project.name}
                       </Typography>

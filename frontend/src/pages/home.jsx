@@ -1,6 +1,5 @@
 import { Button, Grid, Typography, Box } from "@mui/material";
 import CommonCard from "../components/shared/common-card";
-import backgroundImage from "../assets/images/sample-hero.jpg";
 import "../styles/home.css";
 import CardComponent1 from "../components/card-1";
 import { motion } from "framer-motion";
@@ -11,14 +10,15 @@ import Fab from "@mui/material/Fab";
 import { useEffect, useState } from "react";
 
 //!Images
+import backgroundImage from "../assets/images/hero-foot-print.png";
 // import edu1 from "../assets/images/home/education_1.jpg";
 // import edu2 from "../assets/images/home/education_2.jpg";
 // import edu3 from "../assets/images/home/education_3.jpg";
-import ser1 from "../assets/images/home/services_1.avif";
+// import ser1 from "../assets/images/home/services_1.avif";
 // import ser2 from "../assets/images/home/services_2.jpg";
-import proj1 from "../assets/images/home/projects_1.avif";
-import proj2 from "../assets/images/home/projects_2.jpg";
-import proj3 from "../assets/images/home/projects_3.jpg";
+// import proj1 from "../assets/images/home/projects_1.avif";
+// import proj2 from "../assets/images/home/projects_2.jpg";
+// import proj3 from "../assets/images/home/projects_3.jpg";
 import partner1 from "../assets/images/partners/NIROGI.png";
 import partner2 from "../assets/images/partners/SLMA.png";
 import partner3 from "../assets/images/partners/SLSVS.png";
@@ -27,6 +27,9 @@ import IconPostheticLimb from "../assets/images/home/Icon- prosthetic_limb.jpg";
 import IconResearchAndDevelopment from "../assets/images/home/Icon- Research_Dev.jpg";
 import IconHealthEducation from "../assets/images/home/Icon- Health Education.jpg";
 import IconDiagnoServices from "../assets/images/home/Icon- Diagno services.webp";
+import IconStepSmart from "../assets/images/home/Icon- Step Smart.png";
+import IconDiabeticShoe from "../assets/images/home/Icon- Diabetic Shoe.png";
+import IconWoundCare from "../assets/images/home/Icon- Wound Care Clinic.png";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -36,7 +39,7 @@ const Home = () => {
     {
       id: 1,
       title: "Step Smart",
-      url: proj1,
+      url: IconStepSmart,
       description:
         "Personalized diabetic insoles: optimal support, comfort, and foot health.",
       navigationUrl: "/projects",
@@ -44,7 +47,7 @@ const Home = () => {
     {
       id: 2,
       title: "Diabetic Shoe Project",
-      url: proj2,
+      url: IconDiabeticShoe,
       navigationUrl: "/projects#upcommingProjectSection",
     },
     {
@@ -80,7 +83,7 @@ const Home = () => {
   ];
 
   const services = [
-    { id: 1, name: "Wound Care Clinic", url: ser1, color: "#dbecf6" },
+    { id: 1, name: "Wound Care Clinic", url: IconWoundCare, color: "#dbecf6" },
     {
       id: 2,
       name: "Diagnostic Services",
@@ -140,7 +143,7 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <Box sx={{ p: 14 }}>
+        <Box sx={{ p: 10 }}>
           <motion.div
             initial={{ opacity: 0, x: -600 }}
             animate={{ opacity: 1, x: 0 }}

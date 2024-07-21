@@ -45,7 +45,7 @@ const Services = () => {
   });
   return (
     <>
-      <div style={{ marginTop: "4.5rem" }}>
+      <div>
         <motion.div
           ref={firstSectionRef}
           initial={{ opacity: 0 }}
@@ -55,7 +55,7 @@ const Services = () => {
           <Grid
             container
             spacing={2}
-            marginTop={"5.5rem"}
+            marginTop={"1rem"}
             marginBottom={"5.5rem"}
             paddingLeft={"8rem"}
             paddingRight={"8rem"}

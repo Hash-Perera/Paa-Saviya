@@ -39,7 +39,6 @@ const ContactUs = () => {
     <>
       <div
         style={{
-          marginTop: "90px",
           backgroundImage: `url(${backgroundSVG})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
