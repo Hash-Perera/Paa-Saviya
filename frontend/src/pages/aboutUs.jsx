@@ -9,8 +9,10 @@ import Avatar from "@mui/material/Avatar";
 //! Images
 import doc1Image from "../assets/images/projects/doc1Image.png";
 import doc3Image from "../assets/images/projects/doc3Image.png";
-import visionImage from "../assets/images/projects/vision_01_resize.png";
-import aimImage from "../assets/images/projects/vision_02_resize_02.png";
+// import visionImage from "../assets/images/projects/vision_01_resize.png";
+// import aimImage from "../assets/images/projects/vision_02_resize_02.png";
+import IconAimImage from "../assets/images/aboutus/Icon- Our aims.jpg";
+import IconOurVision from "../assets/images/aboutus/Icon- Our Vision.jpg";
 
 import HWDissanayake from "../assets/images/founders/Vidya_Jyothi_Professor_Vajira_H_W_Dissanayake.png";
 import MandikaWijeyaratne from "../assets/images/founders/Prof_Mandika_Wijeyaratne.png";
@@ -34,9 +36,8 @@ const AboutUs = () => {
   };
   const founderList = [
     {
-      name: "Vidya Jyothi Professor Vajira H. W Dissanayake",
-      description:
-        "Chair & Senior Professor of Anatomy, Department of Anatomy, Geneteics & Biomedical Informatics, Faculty of Medicine, University of Colombo",
+      name: "Vidya Jyothi Professor Vajira H. W. Dissanayake",
+      description: "Dean, Faculty of Medicine, University of Colombo",
       image: HWDissanayake,
     },
     {
@@ -145,10 +146,7 @@ const AboutUs = () => {
   return (
     <>
       {/* What is Paada Saviya section */}
-      <div
-        style={{ marginTop: "100px" }}
-        className="container-fluid bg-gray pb-5 "
-      >
+      <div className="container-fluid bg-gray pb-5 ">
         <div className="row mb-4">
           <div className="col text-center">
             <motion.div
@@ -335,7 +333,7 @@ const AboutUs = () => {
                 </div>
               </div>
               <div className="col-md-7 ">
-                <img src={visionImage} className="img-fluid" alt="" />
+                <img src={IconOurVision} className="img-fluid" alt="" />
               </div>
             </div>
           </motion.div>
@@ -357,7 +355,7 @@ const AboutUs = () => {
 
             <div className="row">
               <div className="col-md-7 ">
-                <img src={aimImage} className="img-fluid" />
+                <img src={IconAimImage} className="img-fluid" />
               </div>
               <div className="col d-flex flex-column align-items-center justify-content-center">
                 <h1 className="mb-4 vision-text">
@@ -448,8 +446,8 @@ const AboutUs = () => {
             <Grid
               key={index}
               item
-              xs={5}
-              sm={4}
+              xs={12}
+              sm={12}
               md={3}
               lg={3}
               className="d-flex align-items-center justify-content-center"
@@ -465,7 +463,14 @@ const AboutUs = () => {
                   <Avatar
                     alt="Remy Sharp"
                     src={founder.image}
-                    sx={{ width: "8rem", height: "8rem", marginTop: "1rem" }}
+                    sx={{
+                      width: "8rem",
+                      height: "8rem",
+                      marginTop: "1rem",
+                      "& img": {
+                        objectPosition: "top",
+                      },
+                    }}
                   />
                   <div className="mt-4" style={{ width: "90%" }}>
                     <Typography

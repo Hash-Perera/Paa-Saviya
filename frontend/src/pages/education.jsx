@@ -1,4 +1,14 @@
-import { Button, Grid, Typography, Box, Card, CardMedia } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  Box,
+  Card,
+  CardMedia,
+  CardActions,
+  CardActionArea,
+  CardContent,
+} from "@mui/material";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -28,16 +38,23 @@ import projectImage18 from "../assets/images/limb_salvage/projectImage-18.jpeg";
 import projectImage19 from "../assets/images/limb_salvage/projectImage-19.jpeg";
 import projectImage20 from "../assets/images/limb_salvage/projectImage-20.jpeg";
 import projectImage21 from "../assets/images/limb_salvage/projectImage-21.jpeg";
-
 import edu1 from "../assets/images/home/education_1.jpg";
 import edu2 from "../assets/images/projects/EducationMain.jpg";
 import edu3 from "../assets/images/home/education_3.jpg";
+import diabeticFootConference1 from "../assets/images/diabetic-foot-conferebce/1.png";
+import diabeticFootConference2 from "../assets/images/diabetic-foot-conferebce/2.png";
+import diabeticFootConference3 from "../assets/images/diabetic-foot-conferebce/3.png";
+import IconLimbSalvage from "../assets/images/education/Icon- Certificate Course in Wound Care and Limb Salvage.png";
+import IconHealthEducation from "../assets/images/education/Icon- Health Education.jpg";
+import IconResearchDevelopment from "../assets/images/education/Icon- Research_Dev.jpg";
+import IconConfernece from "../assets/images/education/Icon- Confernece.png";
 
 const Education = () => {
   //! Handle the modal popup
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [modalImageSet, setModalImageSet] = useState([]);
 
   useEffect(() => {
     if (location.hash) {
@@ -72,10 +89,33 @@ const Education = () => {
     { id: 21, image: projectImage21 },
   ];
 
-  const otherImages = [
-    { id: 1, title: "Health Education", image: edu1 },
-    { id: 2, title: "Research & Development", image: edu3 },
+  const diabeticFootConfImages = [
+    { id: 1, image: diabeticFootConference1 },
+    { id: 2, image: diabeticFootConference2 },
+    { id: 3, image: diabeticFootConference3 },
   ];
+
+  const otherImages = [
+    {
+      id: 1,
+      title: "Health Education",
+      image: IconHealthEducation,
+      description:
+        "We spread knowledge about foot care, footwear, diabetes, and ischemic foot through a range of channels, including articles, books, mass media, videos, and guidelines. By utilizing these diverse formats, we aim to educate and raise awareness among healthcare professionals and the public on best practices and advancements in foot health.",
+    },
+    {
+      id: 2,
+      title: "Research & Development",
+      image: IconResearchDevelopment,
+      description:
+        "We intend to conduct extensive research and development in the fields of diabetic footwear, insoles, prosthetics, and orthotics to create innovative solutions tailored to the unique needs of our patients. By collaborating with experts in the fields of medicine, technology, engineering, and the sciences, we aim to leverage cutting-edge technology and interdisciplinary knowledge for our new developments that not only meet the highest standards of quality but also enhance the overall well-being of individuals with diabetes.",
+    },
+  ];
+
+  const changeModalImageSet = (imageSet) => {
+    setModalImageSet(imageSet);
+    handleOpen();
+  };
 
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
     triggerOnce: true,
@@ -89,7 +129,7 @@ const Education = () => {
 
   return (
     <>
-      <div style={{ marginTop: "4.5rem" }}>
+      <div>
         <motion.div
           ref={firstSectionRef}
           initial={{ opacity: 0 }}
@@ -108,7 +148,11 @@ const Education = () => {
             paddingRight={"8rem"}
           >
             <Grid item xs={12} sm={6} md={6} lg={6}>
-              <Typography variant="h5" letterSpacing={2}>
+              <Typography
+                variant="h5"
+                letterSpacing={2}
+                style={{ fontWeight: 600, color: "#1f95f7" }}
+              >
                 Certificate Course in Wound Care and Limb Salvage
               </Typography>
 
@@ -121,15 +165,16 @@ const Education = () => {
                 With the participation of multiple healthcare professionals,
                 extending from doctors to nursing officers from different
                 districts of the country, the first certificate course in wound
-                care and limb salvage was held on January 2024. This marked the
-                pivotal first step in disseminating wound care knowledge to
-                hospital settings with limited resources across borders.
+                care and limb salvage was held on the January 2024. This marked
+                the pivotal first step in disseminating wound care knowledge to
+                hospital settings with limited resources across borders
               </Typography>
+
               <Button
                 variant="outlined"
                 color="primary"
                 sx={{ marginTop: 5 }}
-                onClick={handleOpen}
+                onClick={() => changeModalImageSet(imageSet)}
               >
                 See Photos
               </Button>
@@ -149,9 +194,166 @@ const Education = () => {
               <Card sx={{ maxWidth: "26rem", maxHeight: "26rem" }}>
                 <CardMedia
                   sx={{ height: "26rem", width: "26rem" }}
-                  image={edu2}
+                  image={IconLimbSalvage}
                   title=""
                 />
+              </Card>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            spacing={2}
+            marginTop={"5.5rem"}
+            marginBottom={"5.5rem"}
+            paddingLeft={"8rem"}
+            paddingRight={"8rem"}
+          >
+            <Grid item xs={12} sm={6} md={6} lg={6}>
+              <Typography
+                variant="h5"
+                letterSpacing={2}
+                style={{ fontWeight: 600, color: "#1f95f7" }}
+              >
+                Colombo Diabetic Foot Conference
+              </Typography>
+
+              <Typography
+                variant="body1"
+                marginTop={4}
+                letterSpacing={2}
+                lineHeight={"1.7rem"}
+              >
+                Colombo Diabetic Foot Conference (CDFC) 2022 organized by
+                Paa-SAVIYA and NIROGI Lanka of the SLMA was held successfully on
+                the 1st of February 2022 at the Surgical Auditorium Complex,
+                National Hospital Sri Lanka. The workshop consisted of lectures,
+                case presentations and discussions, as well as hands-on skills
+                sessions
+              </Typography>
+
+              {/*Outcomes*/}
+              <Typography
+                variant="body1"
+                marginTop={4}
+                letterSpacing={2}
+                lineHeight={"1.7rem"}
+                style={{ fontWeight: 600 }}
+              >
+                --- Outcomes of the Colombo Diabetic Foot Conference (CDFC)
+              </Typography>
+              <Typography variant="body2" marginTop={3} letterSpacing={2}>
+                • Provided knowledge and skill training sessions for the
+                management of diabetic foot ulceration for health care
+                practitioners involved in the care of the diabetic foot.
+              </Typography>
+              <Typography variant="body2" marginTop={1} letterSpacing={2}>
+                • Improved awareness on new concepts in diabetic foot risk
+                stratification and the management of foot ulceration.
+              </Typography>
+              <Typography variant="body2" marginTop={1} letterSpacing={2}>
+                • Initiation of establishment of a multidisciplinary diabetic
+                foot ulcer service with joint input from endocrinologists,
+                vascular surgeons, and other allied health professionals
+              </Typography>
+
+              {/*Feedback*/}
+              <Typography
+                variant="body1"
+                marginTop={"5rem"}
+                letterSpacing={2}
+                lineHeight={"1.7rem"}
+                style={{ fontWeight: 600 }}
+              >
+                --- Feedback
+              </Typography>
+              <Typography
+                variant="body2"
+                marginTop={5}
+                letterSpacing={2}
+                style={{ fontStyle: "italic" }}
+              >
+                “All of you did your parts very well and collectively made a
+                well organized and a productive session by which all the
+                participants really benefited, looking forward to many more of
+                the same in the future.”
+                <Typography variant="body2" marginTop={1}>
+                  - Devin, Wound care practitioner
+                </Typography>
+              </Typography>
+              <Typography
+                variant="body2"
+                marginTop={3}
+                letterSpacing={2}
+                style={{ fontStyle: "italic" }}
+              >
+                “A very informative and practical session, thank you all.”
+                <Typography variant="body2" marginTop={1}>
+                  - Lakmal, Nursing officer
+                </Typography>
+              </Typography>
+              <Typography
+                variant="body2"
+                marginTop={3}
+                letterSpacing={2}
+                style={{ fontStyle: "italic" }}
+              >
+                “It was nicely organized. Very informative. Lectures and the
+                team were very good. It is a great service to the country and
+                society. Thank you to everyone.”
+                <Typography variant="body2" marginTop={1}>
+                  - Dr. Rishmal, Medical officer
+                </Typography>
+              </Typography>
+              <Typography
+                variant="body2"
+                marginTop={3}
+                letterSpacing={2}
+                style={{ fontStyle: "italic" }}
+              >
+                “Thank you to the organizing committee for arranging this
+                valuable workshop for us, and to the resource persons for
+                sharing their knowledge on updates on wound management with us.”
+                <Typography variant="body2" marginTop={1}>
+                  - Rangika, Nursing officer
+                </Typography>
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={6}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Card
+                sx={{
+                  maxWidth: "26rem",
+                  maxHeight: "26rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <CardMedia
+                  sx={{ height: "20rem", width: "26rem" }}
+                  image={IconConfernece}
+                  title=""
+                />
+                <CardActions>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={() => changeModalImageSet(diabeticFootConfImages)}
+                  >
+                    See Photos
+                  </Button>
+                </CardActions>
               </Card>
             </Grid>
           </Grid>
@@ -166,61 +368,65 @@ const Education = () => {
         >
           <Grid
             container
-            spacing={2}
+            spacing={5}
             marginTop={"5rem"}
             paddingTop={"3rem"}
             paddingBottom={"5rem"}
             className="bg-light"
+            paddingLeft={"8rem"}
+            paddingRight={"8rem"}
           >
-            {otherImages.map((image) => (
-              <Grid
-                container
-                item
-                xs={12}
-                sm={12}
-                md={6}
-                lg={6}
-                key={image.id}
-                alignItems="center"
-                justifyContent="center"
-                style={{ minHeight: "100%" }}
-              >
-                <div style={{ textAlign: "center" }}>
-                  <Typography variant="h4" marginBottom={"3rem"}>
-                    {image.title}
-                  </Typography>
-                  <Card sx={{ width: "20rem", height: "20rem" }}>
+            {otherImages.map((project) => (
+              <Grid item xs={6} md={6} lg={6} key={project.id}>
+                <Card>
+                  <CardActionArea>
                     <CardMedia
-                      sx={{ width: "20rem", height: "20rem" }}
-                      image={image.image}
-                      title=""
+                      component="img"
+                      height="200rem"
+                      image={project.image || edu2}
+                      alt="green iguana"
                     />
-                  </Card>
-                </div>
+                    <CardContent
+                      sx={{
+                        height: "15rem",
+                        overflow: "auto",
+                      }}
+                    >
+                      <Typography gutterBottom variant="h5" component="div">
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
               </Grid>
             ))}
           </Grid>
         </motion.div>
 
-        <SharedModal open={open} onClose={handleClose}>
-          <Grid container spacing={2}>
-            {imageSet.map((image) => (
-              <Grid item xs={12} sm={12} md={4} lg={4} key={image.id}>
-                <Paper sx={{ height: "18rem" }}>
-                  <img
-                    src={image.image}
-                    alt=""
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </SharedModal>
+        {modalImageSet.length > 0 && (
+          <SharedModal open={open} onClose={handleClose}>
+            <Grid container spacing={2}>
+              {modalImageSet.map((image) => (
+                <Grid item xs={12} sm={12} md={4} lg={4} key={image.id}>
+                  <Paper sx={{ height: "18rem" }}>
+                    <img
+                      src={image.image}
+                      alt=""
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </SharedModal>
+        )}
       </div>
     </>
   );

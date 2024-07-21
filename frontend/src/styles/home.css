@@ -73,6 +73,7 @@
 }
 
 /*================= Card Flip ======================*/
+/*================= Card Flip ======================*/
 .flip-card {
   background-color: rgb(187, 187, 199);
   width: 20rem;
@@ -103,12 +104,12 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  border-radius: 10px;
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #bbb;
-  border-radius: 10px;
   color: black;
 }
 
@@ -116,9 +117,31 @@
 .flip-card-back {
   background-color: rgb(195, 200, 204);
   color: white;
-  border-radius: 10px;
   transform: rotateY(180deg);
 }
 
-/* #103a6d */
-/* #03426b */
+.floating-new-button {
+  position: fixed;
+  top: 5rem;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Scroll to top button */
+.scroll-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-top-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}

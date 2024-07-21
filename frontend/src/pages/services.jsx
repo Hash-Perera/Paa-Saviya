@@ -1,13 +1,39 @@
 import React from "react";
-import { Grid, Typography, Button, Card, CardMedia } from "@mui/material";
+import { useState } from "react";
+import {
+  Grid,
+  Typography,
+  Button,
+  Card,
+  CardMedia,
+  Paper,
+} from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import SharedModal from "../components/shared/modal-popup";
 
 //! Images
-import serviceImage1 from "../assets/images/projects/services1.jpg";
-import serviceImage2 from "../assets/images/projects/services2.jpg";
+import serviceImage1 from "../assets/images/services/Icon- Wound Care Clinic.png";
+import serviceImage2 from "../assets/images/services/Icon- Diagnistic services.webp";
+import woundCareImage1 from "../assets/images/wound_care_clinic/1.png";
+import woundCareImage2 from "../assets/images/wound_care_clinic/2.png";
+import woundCareImage3 from "../assets/images/wound_care_clinic/3.png";
+import woundCareImage4 from "../assets/images/wound_care_clinic/4.png";
+import woundCareImage5 from "../assets/images/wound_care_clinic/5.png";
 
 const Services = () => {
+  //! Handle the modal popup
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const woundCareImageList = [
+    { id: 1, image: woundCareImage1 },
+    { id: 2, image: woundCareImage2 },
+    { id: 3, image: woundCareImage3 },
+    { id: 4, image: woundCareImage4 },
+    { id: 5, image: woundCareImage5 },
+  ];
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -19,7 +45,7 @@ const Services = () => {
   });
   return (
     <>
-      <div style={{ marginTop: "4.5rem" }}>
+      <div>
         <motion.div
           ref={firstSectionRef}
           initial={{ opacity: 0 }}
@@ -29,7 +55,7 @@ const Services = () => {
           <Grid
             container
             spacing={2}
-            marginTop={"5.5rem"}
+            marginTop={"1rem"}
             marginBottom={"5.5rem"}
             paddingLeft={"8rem"}
             paddingRight={"8rem"}
@@ -64,6 +90,14 @@ const Services = () => {
                 practices in the region, demonstrating Paa-SAVIYA's dedication
                 to improving healthcare outcomes for all.
               </Typography>
+              <Button
+                variant="outlined"
+                color="primary"
+                sx={{ marginTop: 3 }}
+                onClick={handleOpen}
+              >
+                See Photos
+              </Button>
             </Grid>
 
             <Grid
@@ -146,6 +180,25 @@ const Services = () => {
           </Grid>
         </motion.div>
       </div>
+      <SharedModal open={open} onClose={handleClose}>
+        <Grid container spacing={2}>
+          {woundCareImageList.map((image) => (
+            <Grid item xs={12} sm={12} md={4} lg={4} key={image.id}>
+              <Paper sx={{ height: "18rem" }}>
+                <img
+                  src={image.image}
+                  alt=""
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </SharedModal>
       ;
     </>
   );
