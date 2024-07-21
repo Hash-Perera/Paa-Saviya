@@ -235,22 +235,22 @@ const Education = () => {
               <Typography
                 variant="body1"
                 marginTop={4}
-                letterSpacing={2}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
                 style={{ fontWeight: 600 }}
               >
                 Outcomes of the Colombo Diabetic Foot Conference (CDFC)
               </Typography>
-              <Typography variant="body1" marginTop={3} letterSpacing={2}>
+              <Typography variant="body1" marginTop={3} letterSpacing={1}>
                 • Provided knowledge and skill training sessions for the
                 management of diabetic foot ulceration for health care
                 practitioners involved in the care of the diabetic foot.
               </Typography>
-              <Typography variant="body1" marginTop={1} letterSpacing={2}>
+              <Typography variant="body1" marginTop={1} letterSpacing={1}>
                 • Improved awareness on new concepts in diabetic foot risk
                 stratification and the management of foot ulceration.
               </Typography>
-              <Typography variant="body1" marginTop={1} letterSpacing={2}>
+              <Typography variant="body1" marginTop={1} letterSpacing={1}>
                 • Initiation of establishment of a multidisciplinary diabetic
                 foot ulcer service with joint input from endocrinologists,
                 vascular surgeons, and other allied health professionals
