@@ -27,7 +27,7 @@ import IconPostheticLimb from "../assets/images/home/Icon- prosthetic_limb.jpg";
 import IconResearchAndDevelopment from "../assets/images/home/Icon- Research_Dev.jpg";
 import IconHealthEducation from "../assets/images/home/Icon- Health Education.jpg";
 import IconDiagnoServices from "../assets/images/home/Icon- Diagno services.webp";
-import IconStepSmart from "../assets/images/home/Icon- Step Smart.png";
+import IconStepSmart from "../assets/images/home/Icon- Step Smart.jpg";
 import IconDiabeticShoe from "../assets/images/home/Icon- Diabetic Shoe.png";
 import IconWoundCare from "../assets/images/home/Icon- Wound Care Clinic.png";
 

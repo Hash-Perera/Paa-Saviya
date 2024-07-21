@@ -41,13 +41,13 @@ const AboutUs = () => {
       image: HWDissanayake,
     },
     {
-      name: "Prof. Mandika Wijeyaratne",
+      name: "Professor Mandika Wijeyaratne",
       description:
         "Chair Professor of Surgery, Department of Surgery, Faculty of Medicine, University of Colombo.",
       image: MandikaWijeyaratne,
     },
     {
-      name: "Prof. Rezni Cassim",
+      name: "Professor Rezni Cassim",
       description:
         "Consultant Vascular and Transplant Surgeon, Professor in Vascular Surgery, Department of Surgery, Faculty of Medicine, University of Colombo.",
       image: RezniCassim,
@@ -65,7 +65,7 @@ const AboutUs = () => {
       image: ThushanGoonaratne,
     },
     {
-      name: "Prof Chathuranga Ranasinghe",
+      name: "Professor Chathuranga Ranasinghe",
       description:
         "Professor in Sport and Exercise Medicine, Department of Allied Health Sciences, Faculty of Medicine, University of Colombo",
       image: ChathurangaRanasinghe,
@@ -193,20 +193,19 @@ const AboutUs = () => {
               className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
-                <p
-                  style={{
-                    lineHeight: 2,
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
-                  }}
-                  className="m-0 text-center"
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
                 >
                   Paa-SAVIYA is an organization within the University of
                   Colombo, Faculty of Medicine, established two years ago to
                   address the significant yet neglected area of wound care in
                   Sri Lanka. Wound care is an unquantified and poorly studied
                   field that requires dedicated attention and resources.
-                </p>
+                </Typography>
               </div>
             </motion.div>
 
@@ -215,20 +214,19 @@ const AboutUs = () => {
               className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
-                <p
-                  style={{
-                    lineHeight: 2,
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
-                  }}
-                  className="m-0 text-center"
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
                 >
                   Paa-SAVIYA is committed to providing comprehensive wound care
                   and other clinical services, conducting rigorous research with
                   the collaboration of other prestigious universities,
                   developing innovative wound care products, engaging in
                   educational activities, trainings and fashioning awareness.
-                </p>
+                </Typography>
               </div>
             </motion.div>
           </motion.div>
@@ -243,13 +241,12 @@ const AboutUs = () => {
               className="about-us-custom-card-2 card border mb-5"
             >
               <div className="card-body d-flex align-items-center">
-                <p
-                  style={{
-                    lineHeight: 2,
-                    letterSpacing: "0.05em",
-                    fontSize: "1.1em",
-                  }}
-                  className=" m-0 text-center"
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
                 >
                   Our team comprises professionals from diverse sectors,
                   including healthcare, sciences, technology, and social
@@ -258,7 +255,7 @@ const AboutUs = () => {
                   conditions. As a proud extension of the Faculty of Medicine,
                   Paa-SAVIYA strives to make a meaningful impact on wound care
                   and patient outcomes.
-                </p>
+                </Typography>
               </div>
             </motion.div>
           </div>
@@ -287,7 +284,7 @@ const AboutUs = () => {
           >
             <div className="custom-card card border-0 py-3">
               <div className="card-body">
-                <p
+                {/* <p
                   style={{
                     lineHeight: 2,
                     letterSpacing: "0.05em",
@@ -301,7 +298,22 @@ const AboutUs = () => {
                   center of excellence dedicated to advancing holistic care,
                   pioneering research, driving innovation, and delivering
                   exceptional education in wound care and amputation prevention.
-                </p>
+                </p> */}
+
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
+                >
+                  Our goal is to be the leader in providing evidence-based,
+                  comprehensive, and patient-centered care for wound management
+                  and amputation prevention in Sri Lanka. We aim to establish a
+                  center of excellence dedicated to advancing holistic care,
+                  pioneering research, driving innovation, and delivering
+                  exceptional education in wound care and amputation prevention.
+                </Typography>
               </div>
             </div>
           </motion.div>
@@ -389,33 +401,53 @@ const AboutUs = () => {
               className="custom-card card border-0 m-0"
             >
               <div className="card-body m-3">
-                <p className="card-title m-0 text-left">
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
+                >
                   Develop a clinical service provision center for wound healing
                   and limb salvage.
-                </p>
+                </Typography>
               </div>
             </motion.div>
 
             <motion.div
               variants={thirdContainerItem}
               className="custom-card card border-0"
+              style={{ marginTop: "1rem" }}
             >
               <div className="card-body">
-                <p className="card-title m-0 text-left">
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
+                >
                   Provide clinical training and enhance knowledge among health
                   professionals.
-                </p>
+                </Typography>
               </div>
             </motion.div>
             <motion.div
               variants={thirdContainerItem}
               className="custom-card card border-0"
+              style={{ marginTop: "1rem" }}
             >
               <div className="card-body">
-                <p className="card-title m-0 text-left">
+                <Typography
+                  variant="body1"
+                  padding={2}
+                  letterSpacing={1}
+                  lineHeight={"1.7rem"}
+                  textAlign={"justify"}
+                >
                   Conduct research and innovation with local and international
                   collaboration
-                </p>
+                </Typography>
               </div>
             </motion.div>
           </motion.div>

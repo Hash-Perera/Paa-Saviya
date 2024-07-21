@@ -68,7 +68,7 @@ const Services = () => {
               <Typography
                 variant="body1"
                 marginTop={4}
-                letterSpacing={2}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
                 textAlign={"justify"}
               >
@@ -163,17 +163,25 @@ const Services = () => {
               </Typography>
 
               <Typography
-                variant="h6"
+                variant="body1"
                 marginTop={4}
                 letterSpacing={1}
                 lineHeight={"2.5rem"}
               >
                 • Noninvasive and invasive perfusion assessment
               </Typography>
-              <Typography variant="h6" letterSpacing={2} lineHeight={"2.5rem"}>
+              <Typography
+                variant="body1"
+                letterSpacing={1}
+                lineHeight={"2.5rem"}
+              >
                 • Infection diagnostics
               </Typography>
-              <Typography variant="h6" letterSpacing={2} lineHeight={"2.5rem"}>
+              <Typography
+                variant="body1"
+                letterSpacing={1}
+                lineHeight={"2.5rem"}
+              >
                 • Biomechanical assessment of the foot
               </Typography>
             </Grid>
