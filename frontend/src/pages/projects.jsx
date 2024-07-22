@@ -125,13 +125,13 @@ const Projects = () => {
                 existing ulcers, improve comfort, and promote overall foot
                 health for those with diabetes
               </Typography>
-              <Typography variant="body1" marginTop={2} letterSpacing={2}>
+              <Typography variant="body1" marginTop={2} letterSpacing={1}>
                 Date: Every 1st and 3rd Wednesday of the month
               </Typography>
               <Typography
                 variant="body1"
                 marginTop={2}
-                letterSpacing={2}
+                letterSpacing={1}
                 lineHeight={"1.7rem"}
               >
                 Location: 13th floor of UCFM Tower, Faculty of Medicine,
