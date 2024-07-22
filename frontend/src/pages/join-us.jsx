@@ -49,10 +49,11 @@ const JoinUs = () => {
             diabetic foot care and treatment. By donating, you provide essential
             resources and care to those at risk of severe foot complications.
             Every contribution helps us offer life-saving interventions and
-            improve the quality of life for individuals in need
+            improve the quality of life for individuals in need.
           </Typography>
           <Typography
-            variant="body2"
+            variant="body1"
+            letterSpacing={1}
             marginTop={3}
             marginLeft={"2rem"}
             marginRight={"2rem"}

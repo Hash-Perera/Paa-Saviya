@@ -151,13 +151,24 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <Box sx={{ p: 10 }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 80,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            zIndex: 1,
+          }}
+        ></div>
+        <Box sx={{ p: 10, position: "relative", zIndex: 2 }}>
           <motion.div
             initial={{ opacity: 0, x: -600 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
           >
-            <Typography variant="h2" color="textPrimary" textAlign="start">
+            <Typography variant="h2" color="white" textAlign="start">
               Paa-SAVIYA
             </Typography>
           </motion.div>
@@ -169,7 +180,7 @@ const Home = () => {
           >
             <Typography
               variant="h6"
-              color="textPrimary"
+              color="white"
               textAlign="start"
               className="mt-4"
               sx={{ fontStyle: "italic" }}
@@ -285,11 +296,12 @@ const Home = () => {
             sx={{
               boxShadow: 1,
               padding: "1rem",
+              backgroundColor: "lightblue",
             }}
           >
             <Typography
               variant="h6"
-              color="#1f95f7"
+              color={"black"}
               style={{ fontWeight: 700 }}
             >
               Highlights
@@ -298,7 +310,8 @@ const Home = () => {
               sx={{
                 width: "100%",
                 maxWidth: "100%",
-                bgcolor: "background.paper",
+                bgcolor: "lightblue",
+                color: "black",
               }}
             >
               <ListItem alignItems="flex-start">
@@ -310,9 +323,9 @@ const Home = () => {
                     <React.Fragment>
                       <Typography
                         variant="body1"
-                        letterSpacing={1}
                         color="black"
                         component="span"
+                        fontWeight={550}
                       >
                         Steps Against Diabetes: Walking the Pekoe Trail with
                         Seeni Colombo
@@ -323,18 +336,25 @@ const Home = () => {
                     <React.Fragment>
                       <Typography
                         variant="body2"
-                        color="text.secondary"
+                        color="black"
                         component="span"
                       >
                         22nd July -16th August, 2024
                       </Typography>
                       <br />
-                      Paa-Saviya will join hands with Seeni Colombo for “Steps
-                      Against Diabetes: Walking the Pekoe Trail,” a
-                      300-kilometer journey supporting diabetic foot care and
-                      treatment. Donations from this project will be directed to
-                      Paa-Saviya to enhance our efforts in providing crucial
-                      care and support.
+                      <Typography
+                        variant="body2"
+                        color="black"
+                        component="span"
+                      >
+                        Paa-SAVIYA will join hands with Seeni Colombo for “Steps
+                        Against Diabetes: Walking the Pekoe Trail,” a
+                        300-kilometer journey supporting diabetic foot care and
+                        treatment. Donations from this project will be directed
+                        to Paa-SAVIYA to enhance our efforts in providing
+                        crucial care and support.
+                      </Typography>
+                      <br />
                     </React.Fragment>
                   }
                 />
