@@ -121,6 +121,15 @@ const Home = () => {
     threshold: 0.1,
   });
 
+  const { ref: firstSectionRef4, inView: firstSectionInView4 } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: firstSectionRef5, inView: firstSectionInView5 } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -143,7 +152,10 @@ const Home = () => {
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
         className="d-flex align-items-center justify-content-start vh-100"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -189,7 +201,7 @@ const Home = () => {
             </Typography>
           </motion.div>
         </Box>
-      </div>
+      </motion.div>
 
       <div
         style={{
@@ -225,7 +237,11 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={firstSectionInView4 ? { opacity: 1 } : {}}
+        transition={{ duration: 2 }}
+        ref={firstSectionRef4}
         style={{
           paddingLeft: "8%",
           paddingRight: "8%",
@@ -363,10 +379,14 @@ const Home = () => {
             </List>
           </Grid>
         </Grid>
-      </div>
+      </motion.div>
 
       {/* Projects section */}
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={firstSectionInView5 ? { opacity: 1 } : {}}
+        transition={{ duration: 2 }}
+        ref={firstSectionRef5}
         style={{
           paddingLeft: "8%",
           paddingRight: "8%",
@@ -395,14 +415,14 @@ const Home = () => {
         </Grid>
 
         <CardComponent1 images={projects} />
-      </div>
+      </motion.div>
 
       {/* Education section */}
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={firstSectionInView2 ? { opacity: 1 } : {}}
-        transition={{ duration: 3 }}
+        transition={{ duration: 2 }}
         ref={firstSectionRef2}
         style={{
           paddingLeft: "12%",
