@@ -53,17 +53,18 @@ const AboutUs = () => {
       image: RezniCassim,
     },
     {
-      name: "Dr Joel Arudchelvam",
-      description:
-        "Consultant Vascular and Transplant Surgeon, Senior Lecturer in Surgery, Department of Surgery, Faculty of Medicine, University of Colombo.",
-      image: JoelArudchelvam,
-    },
-    {
       name: "Dr Thushan Goonaratne",
       description:
         "Consultant Vascular and Transplant Surgeon, Senior Lecturer in Surgery, Department of Surgery, Faculty of Medicine, University of Colombo.",
       image: ThushanGoonaratne,
     },
+    {
+      name: "Dr Joel Arudchelvam",
+      description:
+        "Consultant Vascular and Transplant Surgeon, Senior Lecturer in Surgery, Department of Surgery, Faculty of Medicine, University of Colombo.",
+      image: JoelArudchelvam,
+    },
+
     {
       name: "Professor Chathuranga Ranasinghe",
       description:

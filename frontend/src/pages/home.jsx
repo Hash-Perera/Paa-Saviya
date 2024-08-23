@@ -30,7 +30,7 @@ import backgroundImage from "../assets/images/hero-foot-print.png";
 import partner1 from "../assets/images/partners/NIROGI.png";
 import partner2 from "../assets/images/partners/SLMA.png";
 import partner3 from "../assets/images/partners/SLSVS.png";
-import IconCapacityBuilding from "../assets/images/home/Icon- Capacity Building.png";
+import IconCapacityBuilding from "../assets/images/home/Icon- Capacity Building.jpg";
 import IconPostheticLimb from "../assets/images/home/Icon- prosthetic_limb.jpg";
 import IconResearchAndDevelopment from "../assets/images/home/Icon- Research_Dev.jpg";
 import IconHealthEducation from "../assets/images/home/Icon- Health Education.jpg";
