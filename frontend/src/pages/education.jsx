@@ -43,7 +43,9 @@ import edu2 from "../assets/images/projects/EducationMain.jpg";
 import edu3 from "../assets/images/home/education_3.jpg";
 import diabeticFootConference1 from "../assets/images/diabetic-foot-conferebce/1.png";
 import diabeticFootConference2 from "../assets/images/diabetic-foot-conferebce/2.png";
-import diabeticFootConference3 from "../assets/images/diabetic-foot-conferebce/3.png";
+import diabeticFootConference3 from "../assets/images/diabetic-foot-conferebce/3.jpg";
+import diabeticFootConference4 from "../assets/images/diabetic-foot-conferebce/4.jpg";
+import diabeticFootConference5 from "../assets/images/diabetic-foot-conferebce/5.jpg";
 import IconLimbSalvage from "../assets/images/education/Icon- Certificate Course in Wound Care and Limb Salvage.png";
 import IconHealthEducation from "../assets/images/education/Icon- Health Education.jpg";
 import IconResearchDevelopment from "../assets/images/education/Icon- Research_Dev.jpg";
@@ -93,6 +95,8 @@ const Education = () => {
     { id: 1, image: diabeticFootConference1 },
     { id: 2, image: diabeticFootConference2 },
     { id: 3, image: diabeticFootConference3 },
+    { id: 4, image: diabeticFootConference4 },
+    { id: 5, image: diabeticFootConference5 },
   ];
 
   const otherImages = [

@@ -9,10 +9,12 @@ import Education from "./pages/education";
 import Services from "./pages/services";
 import ScrollToTop from "./components/scrollToTop";
 import JoinUs from "./pages/join-us";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>

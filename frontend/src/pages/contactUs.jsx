@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import backgroundSVG from "../assets/images/contactus/bgImage1.svg";
 import { Typography } from "@mui/material";
 import emailjs from "@emailjs/browser";
+import totast, { toast } from "react-hot-toast";
 
 const ContactUs = () => {
   const form = useRef();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,11 +17,12 @@ const ContactUs = () => {
     e.preventDefault();
     console.log({ name, email, phone, message });
     emailjs
-      .sendForm("service_r0dq854", "template_8bx95pp", form.current, {
-        publicKey: "_rBblvqMsA79sEy4A",
+      .sendForm("service_4nrg9jc", "template_q96ui1c", form.current, {
+        publicKey: "tDjeewpT4PBBQEA0I",
       })
       .then(
         () => {
+          toast.success("Message sent successfully");
           console.log("SUCCESS!");
         },
         (error) => {
@@ -114,6 +115,7 @@ const ContactUs = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   name="user_name"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -125,6 +127,7 @@ const ContactUs = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   name="user_email"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -136,6 +139,7 @@ const ContactUs = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   name="message"
+                  required
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-primary text-white">
