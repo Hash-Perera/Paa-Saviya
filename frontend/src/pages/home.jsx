@@ -14,19 +14,10 @@ import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 //!Images
 import backgroundImage from "../assets/images/hero-foot-print.png";
-// import edu1 from "../assets/images/home/education_1.jpg";
-// import edu2 from "../assets/images/home/education_2.jpg";
-// import edu3 from "../assets/images/home/education_3.jpg";
-// import ser1 from "../assets/images/home/services_1.avif";
-// import ser2 from "../assets/images/home/services_2.jpg";
-// import proj1 from "../assets/images/home/projects_1.avif";
-// import proj2 from "../assets/images/home/projects_2.jpg";
-// import proj3 from "../assets/images/home/projects_3.jpg";
 import partner1 from "../assets/images/partners/NIROGI.png";
 import partner2 from "../assets/images/partners/SLMA.png";
 import partner3 from "../assets/images/partners/SLSVS.png";
@@ -38,6 +29,7 @@ import IconDiagnoServices from "../assets/images/home/Icon- Diagno services.webp
 import IconStepSmart from "../assets/images/home/Icon- Step Smart.jpg";
 import IconDiabeticShoe from "../assets/images/home/Icon- Diabetic Shoe.png";
 import IconWoundCare from "../assets/images/home/Icon- Wound Care Clinic.png";
+import certificateFlyer from "../assets/images/certificate-course-flyer.jpg";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -326,22 +318,34 @@ const Home = () => {
               sx={{
                 width: "100%",
                 maxWidth: "100%",
-                bgcolor: "lightblue",
-                color: "black",
+                bgcolor: "transparent",
+                color: "white",
               }}
             >
-              <ListItem alignItems="flex-start">
+              <ListItem alignItems="flex-start" sx={{ px: 0, pb: 3 }}>
                 <ListItemAvatar>
-                  <CalendarMonthIcon />
+                  <Box
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: "12px",
+                      background: "rgba(255,255,255,0.2)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <CalendarMonthIcon sx={{ color: "white" }} />
+                  </Box>
                 </ListItemAvatar>
                 <ListItemText
                   primary={
                     <React.Fragment>
                       <Typography
-                        variant="body1"
-                        color="black"
+                        variant="h6"
                         component="span"
-                        fontWeight={550}
+                        fontWeight={600}
+                        sx={{ color: "white" }}
                       >
                         Steps Against Diabetes: Walking the Pekoe Trail with
                         Seeni Colombo
@@ -351,31 +355,207 @@ const Home = () => {
                   secondary={
                     <React.Fragment>
                       <Typography
-                        variant="body2"
-                        color="black"
+                        variant="body1"
                         component="span"
+                        sx={{
+                          color: "rgba(255,255,255,0.9)",
+                          display: "block",
+                          mt: 1,
+                        }}
                       >
-                        22nd July -16th August, 2024
+                        22nd July - 16th August, 2024
                       </Typography>
-                      <br />
                       <Typography
-                        variant="body2"
-                        color="black"
+                        variant="body1"
                         component="span"
+                        sx={{
+                          color: "rgba(255,255,255,0.85)",
+                          display: "block",
+                          mt: 1,
+                        }}
                       >
-                        Paa-SAVIYA will join hands with Seeni Colombo for “Steps
-                        Against Diabetes: Walking the Pekoe Trail,” a
+                        Paa-SAVIYA will join hands with Seeni Colombo for "Steps
+                        Against Diabetes: Walking the Pekoe Trail," a
                         300-kilometer journey supporting diabetic foot care and
                         treatment. Donations from this project will be directed
                         to Paa-SAVIYA to enhance our efforts in providing
                         crucial care and support.
                       </Typography>
-                      <br />
                     </React.Fragment>
                   }
                 />
               </ListItem>
-              {/* <Divider variant="inset" component="li" /> */}
+
+              {/* Certificate Course Highlight */}
+              <ListItem
+                alignItems="flex-start"
+                sx={{
+                  px: 0,
+                  pt: 3,
+                  borderTop: "1px solid rgba(255,255,255,0.2)",
+                }}
+              >
+                <ListItemAvatar>
+                  <Box
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: "12px",
+                      background: "rgba(255,255,255,0.2)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <CalendarMonthIcon sx={{ color: "white" }} />
+                  </Box>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <React.Fragment>
+                      <Typography
+                        variant="h6"
+                        component="span"
+                        fontWeight={600}
+                        sx={{ color: "white" }}
+                      >
+                        Certificate Course in Wound Care and Limb Salvage
+                      </Typography>
+                    </React.Fragment>
+                  }
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        sx={{
+                          color: "rgba(255,255,255,0.9)",
+                          display: "block",
+                          mt: 1,
+                        }}
+                      >
+                        2026 Intake - Applications Closing 30th November 2025
+                      </Typography>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        sx={{
+                          color: "rgba(255,255,255,0.85)",
+                          display: "block",
+                          mt: 1,
+                          mb: 2,
+                        }}
+                      >
+                        A 3-month hybrid program for Medical Doctors and Nursing
+                        Officers. Enhance your research journey with advanced
+                        knowledge, practical skills, and innovative research
+                        practices in wound care.
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          display: "flex",
+                          gap: 2,
+                          mt: 3,
+                          flexWrap: "wrap",
+                          alignItems: "center",
+                        }}
+                      >
+                        {/* Flyer Thumbnail */}
+                        <a
+                          href={certificateFlyer}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Box
+                            sx={{
+                              cursor: "pointer",
+                              borderRadius: "12px",
+                              overflow: "hidden",
+                              boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
+                              transition: "all 0.3s ease",
+                              border: "3px solid rgba(255,255,255,0.3)",
+                              "&:hover": {
+                                transform: "scale(1.05)",
+                                boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
+                                border: "3px solid rgba(255,255,255,0.6)",
+                              },
+                            }}
+                          >
+                            <img
+                              src={certificateFlyer}
+                              alt="Certificate Course Flyer"
+                              style={{
+                                width: "200px",
+                                height: "auto",
+                                display: "block",
+                              }}
+                            />
+                          </Box>
+                        </a>
+
+                        {/* Action Buttons */}
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 1.5,
+                          }}
+                        >
+                          <Button
+                            variant="contained"
+                            href="https://med.cmb.ac.lk/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                              background: "white",
+                              color: "#667eea",
+                              fontWeight: "600",
+                              px: 3,
+                              py: 1.2,
+                              borderRadius: "10px",
+                              textTransform: "none",
+                              fontSize: "0.95rem",
+                              "&:hover": {
+                                background: "rgba(255,255,255,0.9)",
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
+                              },
+                              transition: "all 0.3s ease",
+                            }}
+                          >
+                            🌐 Visit Us
+                          </Button>
+
+                          <Button
+                            variant="outlined"
+                            href="https://forms.gle/6oyWR1t9HYZakwpH9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                              borderColor: "white",
+                              color: "white",
+                              fontWeight: "600",
+                              px: 3,
+                              py: 1.2,
+                              borderRadius: "10px",
+                              textTransform: "none",
+                              fontSize: "0.95rem",
+                              "&:hover": {
+                                background: "rgba(255,255,255,0.15)",
+                                borderColor: "white",
+                              },
+                              transition: "all 0.3s ease",
+                            }}
+                          >
+                            📄 Apply
+                          </Button>
+                        </Box>
+                      </Box>
+                    </React.Fragment>
+                  }
+                />
+              </ListItem>
             </List>
           </Grid>
         </Grid>
